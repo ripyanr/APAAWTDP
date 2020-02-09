@@ -80,13 +80,13 @@ procedure TfrSearch.FormCreate(Sender: TObject);
 begin
   with cbCategory do
   begin
-  Items.Add('Advertiser No Identity');
-  Items.Add('Advertiser Name');
-  Items.Add('Organization');
-  Items.Add('Position');
-  Items.Add('Advertiser Contact');
-  Items.Add('Advertiser Email');
-  Items.Add('Advertiser Address');
+  Items.Add('No Identitas Advertiser');
+  Items.Add('Nama Advertiser');
+  Items.Add('Organisasi/Perusahaan');
+  Items.Add('Jabatan');
+  Items.Add('Kontak Advertiser');
+  Items.Add('Email');
+  Items.Add('Alamat');
   end;
   cbCategory.ItemIndex:=0;
   tSearchChange(Self);

@@ -11,6 +11,7 @@ object frSearch: TfrSearch
   Font.Name = 'Verdana'
   Font.Style = []
   OldCreateOrder = False
+  Position = poMainFormCenter
   OnClose = FormClose
   OnCreate = FormCreate
   DesignSize = (
@@ -46,23 +47,23 @@ object frSearch: TfrSearch
     Align = alCustom
     Columns = <
       item
-        Caption = 'No Identity'
+        Caption = 'No Identitas'
         Width = 100
       end
       item
         AutoSize = True
-        Caption = 'Name'
+        Caption = 'Nama'
       end
       item
-        Caption = 'Organization'
+        Caption = 'Organisasi'
         Width = 100
       end
       item
-        Caption = 'Posotion'
+        Caption = 'Jabatan'
         Width = 100
       end
       item
-        Caption = 'Contact'
+        Caption = 'No. Kontak'
         Width = 80
       end
       item
@@ -71,7 +72,7 @@ object frSearch: TfrSearch
       end
       item
         AutoSize = True
-        Caption = 'Address'
+        Caption = 'Alamat'
       end>
     ReadOnly = True
     RowSelect = True

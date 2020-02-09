@@ -1,6 +1,6 @@
 object frAdvance: TfrAdvance
-  Left = 474
-  Top = 132
+  Left = 506
+  Top = 186
   BorderStyle = bsDialog
   ClientHeight = 123
   ClientWidth = 381
@@ -11,6 +11,7 @@ object frAdvance: TfrAdvance
   Font.Name = 'MS Sans Serif'
   Font.Style = []
   OldCreateOrder = False
+  Position = poMainFormCenter
   OnClose = FormClose
   PixelsPerInch = 96
   TextHeight = 13

@@ -1,9 +1,9 @@
 object frInputMaster: TfrInputMaster
-  Left = 596
-  Top = 96
+  Left = 562
+  Top = 109
   BorderStyle = bsToolWindow
-  ClientHeight = 390
-  ClientWidth = 444
+  ClientHeight = 444
+  ClientWidth = 443
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -21,7 +21,7 @@ object frInputMaster: TfrInputMaster
   TextHeight = 13
   object bSave: TSpeedButton
     Left = 360
-    Top = 352
+    Top = 400
     Width = 73
     Height = 33
     Caption = 'Save'
@@ -29,7 +29,7 @@ object frInputMaster: TfrInputMaster
   end
   object bAdd: TSpeedButton
     Left = 272
-    Top = 352
+    Top = 400
     Width = 81
     Height = 33
     Caption = 'Add'
@@ -37,7 +37,7 @@ object frInputMaster: TfrInputMaster
   end
   object lblInfo: TLabel
     Left = 8
-    Top = 352
+    Top = 400
     Width = 225
     Height = 33
     AutoSize = False
@@ -46,10 +46,10 @@ object frInputMaster: TfrInputMaster
   end
   object PageControl1: TPageControl
     Left = 8
-    Top = 8
+    Top = 56
     Width = 425
     Height = 337
-    ActivePage = TabAdvertisment
+    ActivePage = TabSeles
     TabOrder = 0
     OnChange = PageControl1Change
     object TabSeles: TTabSheet
@@ -57,36 +57,36 @@ object frInputMaster: TfrInputMaster
       object GroupBox1: TGroupBox
         Left = 8
         Top = 24
-        Width = 393
+        Width = 401
         Height = 249
         TabOrder = 0
         object Label4: TLabel
           Left = 16
           Top = 96
-          Width = 44
+          Width = 63
           Height = 13
-          Caption = 'Contact'
+          Caption = 'No. Kontak'
         end
         object Label3: TLabel
           Left = 16
           Top = 144
-          Width = 46
+          Width = 40
           Height = 13
-          Caption = 'Address'
+          Caption = 'Alamat'
         end
         object Label2: TLabel
           Left = 16
           Top = 72
-          Width = 56
+          Width = 85
           Height = 13
-          Caption = 'Full Name'
+          Caption = 'Nama Lengkap'
         end
         object Label1: TLabel
           Left = 16
-          Top = 48
-          Width = 71
+          Top = 40
+          Width = 66
           Height = 13
-          Caption = 'Reg Number'
+          Caption = 'No Register'
         end
         object Label19: TLabel
           Left = 16
@@ -154,53 +154,53 @@ object frInputMaster: TfrInputMaster
       object GroupBox2: TGroupBox
         Left = 0
         Top = 0
-        Width = 369
+        Width = 409
         Height = 305
         TabOrder = 0
         object Label20: TLabel
-          Left = 32
+          Left = 16
           Top = 216
-          Width = 46
+          Width = 40
           Height = 13
-          Caption = 'Address'
+          Caption = 'Alamat'
         end
         object Label5: TLabel
-          Left = 32
+          Left = 16
           Top = 152
-          Width = 44
+          Width = 63
           Height = 13
-          Caption = 'Contact'
+          Caption = 'No. Kontak'
         end
         object Label6: TLabel
-          Left = 32
+          Left = 16
           Top = 128
           Width = 44
           Height = 13
-          Caption = 'Position'
+          Caption = 'Jabatan'
         end
         object Label7: TLabel
-          Left = 32
-          Top = 96
+          Left = 16
+          Top = 88
           Width = 69
-          Height = 13
-          Caption = 'Organizaton'
+          Height = 26
+          Caption = 'Organisasi /'#13#10'Perusahaan'
         end
         object Label8: TLabel
-          Left = 32
-          Top = 32
-          Width = 63
+          Left = 16
+          Top = 24
+          Width = 69
           Height = 13
-          Caption = 'No Identity'
+          Caption = 'No Identitas'
         end
         object Label12: TLabel
-          Left = 32
+          Left = 16
           Top = 64
-          Width = 56
+          Width = 85
           Height = 13
-          Caption = 'Full Name'
+          Caption = 'Nama Lengkap'
         end
         object Label13: TLabel
-          Left = 32
+          Left = 16
           Top = 184
           Width = 31
           Height = 13
@@ -210,7 +210,7 @@ object frInputMaster: TfrInputMaster
           Tag = 1
           Left = 120
           Top = 24
-          Width = 201
+          Width = 265
           Height = 21
           MaxLength = 19
           ReadOnly = True
@@ -221,9 +221,9 @@ object frInputMaster: TfrInputMaster
           Tag = 1
           Left = 120
           Top = 88
-          Width = 201
+          Width = 265
           Height = 21
-          ItemHeight = 0
+          ItemHeight = 13
           MaxLength = 40
           TabOrder = 2
           Text = 'tType_Adsr'
@@ -233,7 +233,7 @@ object frInputMaster: TfrInputMaster
           Tag = 1
           Left = 120
           Top = 56
-          Width = 201
+          Width = 265
           Height = 21
           MaxLength = 35
           TabOrder = 1
@@ -243,7 +243,7 @@ object frInputMaster: TfrInputMaster
           Tag = -1
           Left = 120
           Top = 152
-          Width = 201
+          Width = 265
           Height = 21
           MaxLength = 16
           TabOrder = 4
@@ -254,7 +254,7 @@ object frInputMaster: TfrInputMaster
           Tag = 1
           Left = 120
           Top = 216
-          Width = 201
+          Width = 265
           Height = 73
           Lines.Strings = (
             'tAddress_Adsr')
@@ -266,7 +266,7 @@ object frInputMaster: TfrInputMaster
           Tag = 1
           Left = 120
           Top = 120
-          Width = 201
+          Width = 265
           Height = 21
           MaxLength = 30
           TabOrder = 3
@@ -276,7 +276,7 @@ object frInputMaster: TfrInputMaster
           Tag = -2
           Left = 120
           Top = 184
-          Width = 201
+          Width = 265
           Height = 21
           MaxLength = 40
           TabOrder = 5
@@ -290,43 +290,43 @@ object frInputMaster: TfrInputMaster
       object GroupBox3: TGroupBox
         Left = 8
         Top = 8
-        Width = 361
+        Width = 401
         Height = 273
         TabOrder = 0
         object Label17: TLabel
           Left = 40
           Top = 192
-          Width = 60
+          Width = 72
           Height = 13
-          Caption = 'Base Price'
+          Caption = 'Harga Dasar'
         end
         object Label16: TLabel
           Left = 40
           Top = 160
-          Width = 107
+          Width = 101
           Height = 13
-          Caption = 'Min Column Height'
+          Caption = 'Min. Tinggi Kolom'
         end
         object Label14: TLabel
           Left = 40
           Top = 136
-          Width = 105
+          Width = 63
           Height = 13
-          Caption = 'Min Column Count'
+          Caption = 'Min. Kolom'
         end
         object Label11: TLabel
           Left = 40
           Top = 80
-          Width = 63
+          Width = 69
           Height = 13
-          Caption = 'Color Type'
+          Caption = 'Jenis Warna'
         end
         object Label10: TLabel
           Left = 40
           Top = 56
-          Width = 32
+          Width = 61
           Height = 13
-          Caption = 'Type '
+          Caption = 'Jenis Iklan'
         end
         object Label9: TLabel
           Left = 40
@@ -376,7 +376,7 @@ object frInputMaster: TfrInputMaster
         end
         object tJml_Adv: TEdit
           Tag = 2
-          Left = 152
+          Left = 216
           Top = 136
           Width = 49
           Height = 21
@@ -388,7 +388,7 @@ object frInputMaster: TfrInputMaster
         end
         object tTinggi_Adv: TEdit
           Tag = 2
-          Left = 152
+          Left = 216
           Top = 160
           Width = 49
           Height = 21
@@ -400,8 +400,8 @@ object frInputMaster: TfrInputMaster
         end
         object tTarif_Adv: TEdit
           Tag = 2
-          Left = 152
-          Top = 192
+          Left = 216
+          Top = 184
           Width = 145
           Height = 21
           MaxLength = 7

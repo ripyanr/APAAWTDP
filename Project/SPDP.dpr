@@ -14,7 +14,8 @@ uses
   MonthlyReport in '..\Unit\MonthlyReport.pas' {frMonthReport},
   Backup in '..\Unit\Backup.pas' {frAdvance},
   AdvPosition in '..\Unit\AdvPosition.pas' {frAdvPosition},
-  SeachAdvertiser in '..\Unit\SeachAdvertiser.pas' {frSearch};
+  SeachAdvertiser in '..\Unit\SeachAdvertiser.pas' {frSearch},
+  SplashScreen in '..\Unit\SplashScreen.pas' {frSplashScreen};
 
 {$R *.res}
 

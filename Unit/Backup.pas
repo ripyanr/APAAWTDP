@@ -18,6 +18,7 @@ type
     procedure BBUClick(Sender: TObject);
     procedure b_resClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
+
   private
     { Private declarations }
     procedure CopyFileP(source,destination:string);
@@ -59,10 +60,10 @@ begin
             BlockRead(fromF,buffer[0],SizeOf(buffer),Numread);
             FileLength:=FileLength-Numread;
             BlockWrite(toF,buffer[0],Numread);
-            label5.Caption:='Please waite....process'+inf+' data..';
+            label5.Caption:='Mohon tunggu....Proses'+inf+' data..';
             Application.ProcessMessages;
             Progress:=Progress+numread;
-            label5.Caption:=inf+' data successfully';
+            label5.Caption:=inf+' data berhasil';
             lb_info.Caption:=inf+' Database';
           end;
         CloseFile(fromF);
@@ -87,7 +88,7 @@ begin
         if not DirectoryExists(pchar('backup')) then CreateDir(pchar('backup'));
         CopyFileP(pchar(oldPath),pchar('backup\backup_db'+FormatDateTime('ddMMyy_hhmmss' ,Now)+'.accdb'));
       end
-      else ShowMessage('Database Not found !');
+      else ShowMessage('Database tidak ditemukan !');
 
   finally
     Create_InIFile.Free
@@ -105,7 +106,7 @@ begin
       NewPath:=odlg_DBOption.FileName;
          if oldPath=NewPath then
          begin
-          ShowMessage('Database selected is orginal database !');
+          ShowMessage('Database tersebut sedang digunakan oleh aplikasi !');
           exit
          end;
         NewPath:=odlg_DBOption.FileName;

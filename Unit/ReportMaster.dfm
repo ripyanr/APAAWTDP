@@ -36,7 +36,7 @@ object frReportMaster: TfrReportMaster
     Top = 8
     Width = 305
     Height = 73
-    Caption = 'Report'
+    Caption = 'Laporan'
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
     Font.Height = -9
@@ -63,9 +63,9 @@ object frReportMaster: TfrReportMaster
   object cekFilter: TCheckBox
     Left = 24
     Top = 88
-    Width = 113
+    Width = 169
     Height = 17
-    Caption = 'Enable Filter'
+    Caption = 'Filter berdasarkan'
     TabOrder = 1
     OnClick = cekFilterClick
   end

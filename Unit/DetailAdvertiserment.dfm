@@ -1,10 +1,10 @@
 object frDetailTransaction: TfrDetailTransaction
-  Left = 470
-  Top = 320
+  Left = 139
+  Top = 138
   BorderStyle = bsDialog
-  Caption = 'Detail Transaction'
-  ClientHeight = 491
-  ClientWidth = 1031
+  Caption = 'Detail Transaksi'
+  ClientHeight = 488
+  ClientWidth = 863
   Color = clBtnFace
   Font.Charset = ANSI_CHARSET
   Font.Color = clWindowText
@@ -16,8 +16,8 @@ object frDetailTransaction: TfrDetailTransaction
   OnClose = FormClose
   OnCreate = FormCreate
   DesignSize = (
-    1031
-    491)
+    863
+    488)
   PixelsPerInch = 96
   TextHeight = 13
   object bEdit_Advt: TSpeedButton
@@ -25,66 +25,67 @@ object frDetailTransaction: TfrDetailTransaction
     Top = 8
     Width = 177
     Height = 33
-    Caption = 'Edit Position / '#13#10'Content Summary'
+    Caption = 'Edit Posisi / '#13#10'Judul Iklan'
     Flat = True
     OnClick = bEdit_AdvtClick
   end
   object lbl1: TLabel
-    Left = 744
-    Top = 472
-    Width = 280
+    Left = 8
+    Top = 464
+    Width = 242
     Height = 13
-    Caption = 'Double Click The List for edit position advertising'
+    Anchors = [akLeft, akBottom]
+    Caption = 'Double Click untuk melakukan pengeditan'
   end
   object lvAdvertisment: TListView
     Left = 8
     Top = 48
-    Width = 1017
-    Height = 409
+    Width = 848
+    Height = 406
     Anchors = [akLeft, akTop, akRight, akBottom]
     Columns = <
       item
-        Caption = 'Advertising No'
+        Caption = 'No Advertising'
         Width = 80
       end
       item
-        Caption = 'Adv Code'
+        Caption = 'Kode Iklan'
         Width = 80
       end
       item
-        Caption = 'Type Advertising'
+        Caption = 'Jenis Iklan'
         Width = 100
       end
       item
-        Caption = 'Summary of Advertisement'
+        Caption = 'Isi Iklan'
         Width = 250
       end
       item
-        Caption = 'Edition'
+        Caption = 'Edisi'
       end
       item
-        Caption = 'Page'
+        Caption = 'Halaman'
       end
       item
-        Caption = 'First Col'
+        Caption = 'Kolom Pertama'
       end
       item
-        Caption = 'Col Count'
+        Caption = 'Jml Kolom'
       end
       item
-        Caption = 'First Pos'
+        Caption = 'Posisi Pertama'
       end
       item
-        Caption = 'Col Height'
+        Caption = 'Tinggi Kolom'
       end
       item
-        Caption = 'Selling Price'
+        Caption = 'Harga Jual'
       end
       item
-        Caption = 'Disc'
+        Caption = 'Diskon'
       end
       item
-        Caption = 'Price Total'
+        Caption = 'Total Harga'
         Width = 100
       end>
     ReadOnly = True
@@ -94,7 +95,7 @@ object frDetailTransaction: TfrDetailTransaction
     OnDblClick = lvAdvertismentDblClick
   end
   object cbCategory: TComboBox
-    Left = 768
+    Left = 603
     Top = 16
     Width = 257
     Height = 21
@@ -103,11 +104,11 @@ object frDetailTransaction: TfrDetailTransaction
     TabOrder = 1
   end
   object tSearch: TEdit
-    Left = 189
+    Left = 200
     Top = 16
-    Width = 564
+    Width = 388
     Height = 21
-    Anchors = [akTop, akRight]
+    Anchors = [akLeft, akTop, akRight]
     TabOrder = 0
     OnChange = tSearchChange
   end

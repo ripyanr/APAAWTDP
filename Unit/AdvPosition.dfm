@@ -2,7 +2,7 @@ object frAdvPosition: TfrAdvPosition
   Left = 362
   Top = 80
   BorderStyle = bsDialog
-  Caption = 'Advertising Position'
+  Caption = 'Pengaturan Posisi Iklan'
   ClientHeight = 433
   ClientWidth = 850
   Color = clBtnFace
@@ -12,6 +12,7 @@ object frAdvPosition: TfrAdvPosition
   Font.Name = 'Verdana'
   Font.Style = []
   OldCreateOrder = False
+  Position = poMainFormCenter
   OnActivate = FormActivate
   OnClose = FormClose
   PixelsPerInch = 96
@@ -49,9 +50,9 @@ object frAdvPosition: TfrAdvPosition
     object Label9: TLabel
       Left = 440
       Top = 32
-      Width = 32
+      Width = 20
       Height = 16
-      Caption = 'Page'
+      Caption = 'Hal'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -13
@@ -62,9 +63,9 @@ object frAdvPosition: TfrAdvPosition
     object Label8: TLabel
       Left = 328
       Top = 32
-      Width = 44
+      Width = 29
       Height = 16
-      Caption = 'Edition'
+      Caption = 'Edisi'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -13
@@ -75,9 +76,9 @@ object frAdvPosition: TfrAdvPosition
     object lbl1: TLabel
       Left = 8
       Top = 8
-      Width = 105
+      Width = 47
       Height = 13
-      Caption = 'Content Summary'
+      Caption = 'Isi Iklan'
     end
     object tEdition_advt: TEdit
       Tag = 2
@@ -118,11 +119,11 @@ object frAdvPosition: TfrAdvPosition
       Height = 73
       TabOrder = 4
       object Label10: TLabel
-        Left = 208
+        Left = 184
         Top = 16
         Width = 81
         Height = 16
-        Caption = 'First Column'
+        Caption = 'Klm Pertama'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -13
@@ -131,11 +132,11 @@ object frAdvPosition: TfrAdvPosition
         ParentFont = False
       end
       object Label18: TLabel
-        Left = 208
+        Left = 184
         Top = 40
-        Width = 85
+        Width = 95
         Height = 16
-        Caption = 'First Position'
+        Caption = 'Posisi Pertama'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -13
@@ -146,9 +147,9 @@ object frAdvPosition: TfrAdvPosition
       object Label11: TLabel
         Left = 8
         Top = 8
-        Width = 44
+        Width = 29
         Height = 16
-        Caption = 'Edition'
+        Caption = 'Edisi'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -13
@@ -159,9 +160,9 @@ object frAdvPosition: TfrAdvPosition
       object Label19: TLabel
         Left = 8
         Top = 40
-        Width = 32
+        Width = 20
         Height = 16
-        Caption = 'Page'
+        Caption = 'Hal'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -13
@@ -256,26 +257,26 @@ object frAdvPosition: TfrAdvPosition
           Width = 150
         end
         item
-          Caption = 'Kode Advt'
+          Caption = 'Kode'
           Width = 80
         end
         item
-          Caption = 'Content Summary'
+          Caption = 'Jns Iklan'
           Width = 150
         end
         item
-          Caption = '1st Col'
+          Caption = 'Klm Pertama'
         end
         item
-          Caption = '1st Pos'
+          Caption = 'Posisi Pertama'
         end
         item
-          Caption = 'ColCount'
+          Caption = 'Jml. Klm'
           MaxWidth = 1
           Width = 0
         end
         item
-          Caption = 'ColHeight'
+          Caption = 'Tinggi Klm'
           MaxWidth = 1
           Width = 0
         end>

@@ -85,12 +85,11 @@ begin
   with cbCategory do
   begin
     cbCategory.Items.Clear;
-    Items.Add('Advertising Number');
-    Items.Add('Advertisement Code');
-    Items.Add('Advertisement Type');
-    Items.Add('Summary of advertisement');
-    Items.Add('Edition');
-    Items.Add('Page');
+    Items.Add('No Advetising');
+    Items.Add('Kode Iklan');
+    Items.Add('Isi Iklan');
+    Items.Add('Edisi');
+    Items.Add('Halaman');
   end;
 end;
 

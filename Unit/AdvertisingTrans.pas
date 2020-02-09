@@ -3,7 +3,7 @@ unit AdvertisingTrans;
 interface
 
 uses
-  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Windows, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, ExtCtrls, ComCtrls, StdCtrls, Buttons, DB, ADODB;
 
 type
@@ -165,10 +165,10 @@ type
     bDeleteInvoice: TBitBtn;
     bRemoveFromList: TBitBtn;
     SpeedButton1: TSpeedButton;
-    Label22: TLabel;
     Label23: TLabel;
     lblinfo: TLabel;
     lblinfo2: TLabel;
+    Label22: TLabel;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormCreate(Sender: TObject);
     procedure bCloseClick(Sender: TObject);
@@ -415,7 +415,7 @@ begin
     x1:=StrToInt(tFirstColumn.Text);
     if (x1+iMin_ColumnCount-1)>5 then
     begin
-      MessageDlg('First Colom too big !',mtWarning,[mbOK],0);
+      MessageDlg('Kolom pertama terlalu besar!',mtWarning,[mbOK],0);
       tFirstColumn.Text:=IntToStr(5-iMin_ColumnCount+1);
       x1:=StrToInt(tFirstColumn.Text);
       tLastColumn.Text:=IntToStr(iMin_ColumnCount);
@@ -429,13 +429,13 @@ begin
     jml_x:=StrToInt(tLastColumn.Text);
     if jml_x < iMin_ColumnCount then
     begin
-      MessageDlg('Column count too small !',mtWarning,[mbOK],0);
+      MessageDlg('Jumlah kolom terlalu sedikit !',mtWarning,[mbOK],0);
       tLastColumn.Text:=IntToStr(iMin_ColumnCount);
       jml_x:=StrToInt(tLastColumn.Text);
     end
     else if (x1+jml_x-1) > 5 then
     begin
-      MessageDlg('Column count too big !',mtWarning,[mbOK],0);
+      MessageDlg('Jumlah kolom terlau banyak !',mtWarning,[mbOK],0);
       tLastColumn.Text:=IntToStr(jml_x-((x1+jml_x-1)-5));
       jml_x:=StrToInt(tLastColumn.Text);
     end;
@@ -454,7 +454,7 @@ begin
     y1:=StrToInt(tFirstPost.Text);
     if (y1+iMin_ColumnHeight) > pnlBG.Height then
     begin
-      MessageDlg('First Position too big !',mtWarning,[mbOK],0);
+      MessageDlg('Posisi pertama terlalu besar !',mtWarning,[mbOK],0);
       y1:=y1-((y1+iMin_ColumnHeight)-pnlBG.Height);
       tFirstPost.Text:=IntToStr(y1);
     end;
@@ -469,7 +469,7 @@ begin
     jml_y:=StrToInt(tHeight.Text);
     if (y1+jml_y) > pnlBG.Height then
     begin
-      MessageDlg('Column height too big !',mtWarning,[mbOK],0);
+      MessageDlg('Kolom terlalu tinggi!',mtWarning,[mbOK],0);
       jml_y:=jml_y-((y1+jml_y)-pnlBG.Height);
       tHeight.Text:=IntToStr(jml_y);
     end;
@@ -589,7 +589,7 @@ begin
        skode:=copy('000',1,3- length(skode))+skode;
        if ikode > 999 then
        begin
-          ShowMessage('Advertising transaction number already full !');
+          ShowMessage('No. Advertising Sudah Penuh!');
           close;
        end;
        tNo_Trans.Text:=skode+'/ADV/DP/'+sMonth+'-'+FormatDateTime('yy',Now);
@@ -641,7 +641,7 @@ begin
        skode:=copy('000',1,3- length(skode))+skode;
        if ikode > 999 then
        begin
-          ShowMessage('Invice number already full !');
+          ShowMessage('No Bukti sudah penuh !');
           close;
        end;
        sInvoice:=skode+'/KMS-ADV/DP/'+sMonth+'-'+FormatDateTime('yy',Now);
@@ -1147,7 +1147,7 @@ begin
  if Trim(tHeight.Text)<>'' then
   if StrToInt(tHeight.Text)<iMin_ColumnHeight then
   begin
-    MessageDlg('Minimal Column height is '+IntToStr(iMin_ColumnHeight),mtWarning,[mbOK],0);
+    MessageDlg('Minimal tinggi kolom harus '+IntToStr(iMin_ColumnHeight),mtWarning,[mbOK],0);
     tHeight.Text:=IntToStr(iMin_ColumnHeight);
     tHeight.SetFocus;
   end;
@@ -1177,14 +1177,14 @@ begin
 
    if Length(trim(tContent.Text))< 5 then
   begin
-    MessageDlg('Please Content Summary dont less then 5 charater !!!',mtWarning,[mbOK],0);
+    MessageDlg('Input isi judul tidak boleh kurang dari 5 karakter!!!',mtWarning,[mbOK],0);
     tContent.SetFocus;
     exit
   end;
 
   if Length(tSelling_Price.Text)=0 then
   begin
-    MessageDlg('Please Selling Price dont Empty !!!',mtWarning,[mbOK],0);
+    MessageDlg('Harga jual harus diisi !!!',mtWarning,[mbOK],0);
     tSelling_Price.SetFocus;
     exit
   end;
@@ -1210,7 +1210,7 @@ begin
 
       if shpAdvt_new.Brush.Color=clBlack then
       begin
-      MessageDlg('Space advertisement that already order !',mtWarning,[mbOK],0);
+      MessageDlg('Ruang Iklan sudah dipesan orang lain !',mtWarning,[mbOK],0);
       tFirstColumn.SetFocus;
       View_Detail;
       exit
@@ -1219,7 +1219,7 @@ begin
       SelectQuery('select * from temp_detail_advt');
       if dm.Qview.RecordCount> 10 then
       begin
-       MessageDlg ('Maximal list is 10 items !',mtWarning,[mbOK],0);
+       MessageDlg ('Maksimal 10 daftar !',mtWarning,[mbOK],0);
       Exit
       end;
 
@@ -1266,21 +1266,21 @@ begin
 
   if (tWage.Visible=True) and (Length(tWage.Text)=0) then
   begin
-    MessageDlg('Commission don`t empty !',mtWarning,[mbOK],0);
+    MessageDlg('Komisi tidak boleh dikosongkan !',mtWarning,[mbOK],0);
     tWage.SetFocus;
     exit
   end;
 
   if Length(lblNo_Id.Caption)=0 then
   begin
-    MessageDlg('ID Number dont empty !',mtWarning,[mbOK],0);
+    MessageDlg('No. Id Tidak boleh dikosongkan !',mtWarning,[mbOK],0);
     tFind_Adsr.SetFocus;
     exit
   end;
 
     if lvDetail.Items.Count=0 then
   begin
-    MessageDlg('Advertisement not yet insert!',mtWarning,[mbOK],0);
+    MessageDlg('Jenis iklan belum dimasukan !',mtWarning,[mbOK],0);
     tEdition.SetFocus;
     exit
   end;
@@ -1514,12 +1514,12 @@ begin
 if PageControl1.TabIndex=1 then
       begin
         cbCategory.Items.Clear;
-        cbCategory.Items.Add('Advertising Number');
-        cbCategory.Items.Add('Advertising Date');
-        cbCategory.Items.Add('Advertiser ID');
-        cbCategory.Items.Add('Advertiser Name');
-        cbCategory.Items.Add('Organizaton or Company');
-        cbCategory.Items.Add('Position');
+        cbCategory.Items.Add('No Advertising');
+        cbCategory.Items.Add('Tanggal Transaksi');
+        cbCategory.Items.Add('No. Id Advertiser');
+        cbCategory.Items.Add('Nama Advertiser');
+        cbCategory.Items.Add('Organisasi/ Perusahaan');
+        cbCategory.Items.Add('Jabatan');
         cbCategory.ItemIndex:=0;
         rb_DisbleFilter.Checked:=True;
         rb_DisbleFilterClick(Self);
@@ -1527,10 +1527,10 @@ if PageControl1.TabIndex=1 then
 else if PageControl1.TabIndex=2 then
       begin
         cbCategory2.Items.Clear;
-        cbCategory2.Items.Add('Invoice Number');
-        cbCategory2.Items.Add('Invice Date');
-        cbCategory2.Items.Add('Sales Reg. Number');
-        cbCategory2.Items.Add('Sales Name');
+        cbCategory2.Items.Add('No Bukti');
+        cbCategory2.Items.Add('Tanggal');
+        cbCategory2.Items.Add('No.Reg');
+        cbCategory2.Items.Add('Nama Sales');
         cbCategory2.ItemIndex:=0;
         rb_disfilter.Checked:=True;
         rb_disfilterClick(Self);
@@ -1719,12 +1719,12 @@ begin
         Next;
       end;
     end;
- lblinfo2.Caption:='Records Count = '+IntToStr(lvCommission.Items.Count)+' record';
+ lblinfo2.Caption:='Jml Record = '+IntToStr(lvCommission.Items.Count)+' record';
 end;
 
 procedure TfrAdvertisingTrans.bCreateClick(Sender: TObject);
 begin
-  if MessageDlg('Continue to make commission for sales automatically ?',mtConfirmation,[mbYes,mbNo],0)=mrYes then
+  if MessageDlg('Lanjutkan membuat komisi iklan untuk sales secara otomatis?',mtConfirmation,[mbYes,mbNo],0)=mrYes then
   begin
   Qcomm.SQL.Clear;
   Qcomm.SQL.Text:='Select distinct sales_regno from sales_commission where advertising_no not in (select advertising_no from detail_taking_commission)';
@@ -1892,7 +1892,7 @@ begin
   dm.frxRep_Master.ShowReport;
   end
   else
-  MessageDlg ('You most select item in the list items before view more detail !',mtWarning,[mbOK],0);
+  MessageDlg ('Pilih data terlibih dahulu !',mtWarning,[mbOK],0);
 end;
 
 procedure TfrAdvertisingTrans.bPrintInvoiceClick(Sender: TObject);
@@ -1970,12 +1970,12 @@ procedure TfrAdvertisingTrans.bDeleteClick(Sender: TObject);
 begin
  if lvAdvertising.Selected<> nil then
  begin
-    if MessageDlg ('You sure delete this item !',mtWarning,[mbYes,mbNo],0)=mrYes then
+    if MessageDlg ('Yakin hapus  !',mtWarning,[mbYes,mbNo],0)=mrYes then
     begin
 
     SelectQuery('select advertising_no from detail_taking_commission where advertising_no="'+ lvAdvertising.Selected.Caption +'"');
     if dm.Qview.RecordCount > 0  then
-      MessageDlg(' Delete filed, because advertising number '+ lvAdvertising.Selected.Caption +' used in detail taking commission  !',mtWarning,[mbOK],0)
+      MessageDlg(' Penghapusan  gagal, karena No Advertising '+ lvAdvertising.Selected.Caption +' Ddigunakan rincian pengambilan komisi iklan!',mtWarning,[mbOK],0)
     else
      begin
       ExcuteQuery('Delete from detail_advertising_trans where advertising_no="'+ lvAdvertising.Selected.Caption +'"');
@@ -1986,14 +1986,14 @@ begin
     end;
  end
  else
- MessageDlg ('You most select item in the list items before delete !',mtWarning,[mbOK],0);
+ MessageDlg ('pilih item sebelum menghapus !',mtWarning,[mbOK],0);
 end;
 
 procedure TfrAdvertisingTrans.bRemoveFromListClick(Sender: TObject);
 begin
  if lvCommission.Selected<>nil then
  begin
-   if MessageDlg('You sure remove '+lvCommission.Selected.Caption+' ?'+#13+#13+' If you remove it, the invoice number add automatic to next taking of commission ',mtConfirmation,[mbYes,mbNo],0)=mrYes then
+   if MessageDlg('Yakin kembalikan '+lvCommission.Selected.Caption+' ?'+#13+#13+' ke semula? ',mtConfirmation,[mbYes,mbNo],0)=mrYes then
     begin
       ExcuteQuery('Delete from detail_taking_commission where invoice_no="'+lvCommission.Selected.Caption+'"');
       ExcuteQuery('Delete from taking_of_commission where invoice_no="'+lvCommission.Selected.Caption+'"');
@@ -2001,14 +2001,14 @@ begin
     end;
  end
  else
- MessageDlg ('You most select item in the list items before remove !',mtWarning,[mbOK],0);
+ MessageDlg ('pilih item terlibih dahulu !',mtWarning,[mbOK],0);
 end;
 
 procedure TfrAdvertisingTrans.bDeleteInvoiceClick(Sender: TObject);
 begin
  if lvCommission.Selected<>nil then
  begin
-   if MessageDlg('You sure delete '+lvCommission.Selected.Caption+' ?',mtConfirmation,[mbYes,mbNo],0)=mrYes then
+   if MessageDlg('Yakin hapus '+lvCommission.Selected.Caption+' ?',mtConfirmation,[mbYes,mbNo],0)=mrYes then
     begin
      Qcomm.SQL.Clear;
      Qcomm.SQL.Text:='SELECT taking_of_commission.invoice_no, sales_commission.advertising_no '+
@@ -2086,8 +2086,3 @@ begin
 end;
 
 end.
-
-
-
-
-

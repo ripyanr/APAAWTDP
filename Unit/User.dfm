@@ -12,6 +12,7 @@ object frUser: TfrUser
   Font.Name = 'Verdana'
   Font.Style = []
   OldCreateOrder = False
+  Position = poMainFormCenter
   OnClose = FormClose
   OnCreate = FormCreate
   PixelsPerInch = 96
@@ -54,16 +55,16 @@ object frUser: TfrUser
         object Label5: TLabel
           Left = 24
           Top = 72
-          Width = 73
+          Width = 68
           Height = 13
-          Caption = 'Access Level'
+          Caption = 'Level Akses'
         end
         object Label3: TLabel
           Left = 24
           Top = 48
           Width = 33
           Height = 13
-          Caption = 'Name'
+          Caption = 'Nama'
         end
         object Label2: TLabel
           Left = 24
@@ -143,10 +144,10 @@ object frUser: TfrUser
           end
           item
             AutoSize = True
-            Caption = 'User Name'
+            Caption = 'Nama Pengguna'
           end
           item
-            Caption = 'Access Level'
+            Caption = 'Level Akses'
             Width = 90
           end
           item

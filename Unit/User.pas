@@ -160,8 +160,8 @@ begin
                   QuotedStr(tUserID.Text));
        if not Eof then
         begin
-          MessageDlg('UserID '+tUserID.Text+' already used !,'+#13+
-          'Enter new user !',mtWarning,[mbOK],0);
+          MessageDlg('UserID '+tUserID.Text+' sudah ada dalam daabase !,'+#13+
+          'Entri user baru !',mtWarning,[mbOK],0);
           tUserID.Clear;
           tUserID.SetFocus;
           exit
@@ -202,7 +202,7 @@ begin
       begin
         if lvUser.Selected.SubItems[2]='ADMIN' then
         begin
-        MessageDlg('ADMIN cannot delete !',mtWarning,[mbOK],0);
+        MessageDlg('ADMIN tidak bisa dihapus !',mtWarning,[mbOK],0);
         Exit
         end;
 

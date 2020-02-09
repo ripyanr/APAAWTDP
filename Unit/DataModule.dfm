@@ -1,24 +1,22 @@
 object dm: Tdm
   OldCreateOrder = False
-  Left = 543
-  Top = 126
-  Height = 511
-  Width = 743
+  Left = 387
+  Top = 47
+  Height = 561
+  Width = 690
   object AdoConn: TADOConnection
-    Connected = True
     ConnectionString = 
       'Provider=Microsoft.ACE.OLEDB.12.0;Password="";User ID=admin;Data' +
-      ' Source=C:\Users\yanr\Desktop\APAAWTDRP\Project\dbs\db_advertisi' +
-      'ng.accdb;Mode=Share Deny None;Persist Security Info=True;Jet OLE' +
-      'DB:System database="";Jet OLEDB:Registry Path="";Jet OLEDB:Datab' +
-      'ase Password=yanwars;Jet OLEDB:Engine Type=6;Jet OLEDB:Database ' +
-      'Locking Mode=0;Jet OLEDB:Global Partial Bulk Ops=2;Jet OLEDB:Glo' +
-      'bal Bulk Transactions=1;Jet OLEDB:New Database Password="";Jet O' +
-      'LEDB:Create System Database=False;Jet OLEDB:Encrypt Database=Fal' +
-      'se;Jet OLEDB:Compact Without Replica Repair=False;Jet OLEDB:SFP=' +
-      'False;Jet OLEDB:Support Complex Data=False'
+      ' Source=dbs\db_advertising.accdb;Mode=Share Deny None;Persist Se' +
+      'curity Info=True;Jet OLEDB:System database="";Jet OLEDB:Registry' +
+      ' Path="";Jet OLEDB:Database Password=yanwars;Jet OLEDB:Engine Ty' +
+      'pe=6;Jet OLEDB:Database Locking Mode=0;Jet OLEDB:Global Partial ' +
+      'Bulk Ops=2;Jet OLEDB:Global Bulk Transactions=1;Jet OLEDB:New Da' +
+      'tabase Password="";Jet OLEDB:Create System Database=False;Jet OL' +
+      'EDB:Encrypt Database=False;Jet OLEDB:Compact Without Replica Rep' +
+      'air=False;Jet OLEDB:SFP=False;Jet OLEDB:Support Complex Data=Fal' +
+      'se'
     LoginPrompt = False
-    Mode = cmShareDenyNone
     Provider = 'Microsoft.ACE.OLEDB.12.0'
     Left = 232
     Top = 16
@@ -26,65 +24,62 @@ object dm: Tdm
   object QConnection: TADOQuery
     Connection = AdoConn
     Parameters = <>
-    Left = 304
+    Left = 456
     Top = 16
   end
   object Qinput: TADOQuery
     Connection = AdoConn
     Parameters = <>
-    Left = 400
+    Left = 560
     Top = 16
   end
   object Qview: TADOQuery
     Connection = AdoConn
     Parameters = <>
-    Left = 360
+    Left = 512
     Top = 16
   end
   object QR_Advtsm: TADOQuery
-    Active = True
     Connection = AdoConn
     CursorType = ctStatic
     Parameters = <>
     SQL.Strings = (
       'Select * from Advertisement')
-    Left = 32
+    Left = 80
     Top = 104
   end
   object DSource_Advtsm: TDataSource
     DataSet = QR_Advtsm
-    Left = 32
-    Top = 160
+    Left = 80
+    Top = 168
   end
   object DSource_Sales: TDataSource
     DataSet = QR_Sales
-    Left = 120
-    Top = 160
+    Left = 200
+    Top = 168
   end
   object DSource_Advr: TDataSource
     DataSet = QR_Advr
-    Left = 224
-    Top = 160
+    Left = 296
+    Top = 168
   end
   object QR_Sales: TADOQuery
-    Active = True
     Connection = AdoConn
     CursorType = ctStatic
     Parameters = <>
     SQL.Strings = (
       'Select * from Sales')
-    Left = 120
+    Left = 192
     Top = 104
   end
   object QR_Advr: TADOQuery
-    Active = True
     Connection = AdoConn
     CursorType = ctStatic
     Parameters = <>
     SQL.Strings = (
       'Select * from Advertiser')
-    Left = 224
-    Top = 112
+    Left = 296
+    Top = 104
   end
   object Dset_Advtsm: TfrxDBDataset
     UserName = 'Dset_Advtsm'
@@ -97,8 +92,8 @@ object dm: Tdm
       'min_height=min_height'
       'base_price=base_price')
     DataSource = DSource_Advtsm
-    Left = 32
-    Top = 216
+    Left = 128
+    Top = 224
   end
   object Dset_Sales: TfrxDBDataset
     UserName = 'Dset_Sales'
@@ -110,8 +105,8 @@ object dm: Tdm
       'sales_email=sales_email'
       'sales_address=sales_address')
     DataSource = DSource_Sales
-    Left = 128
-    Top = 216
+    Left = 224
+    Top = 224
   end
   object Dset_Advr: TfrxDBDataset
     UserName = 'Dset_Advr'
@@ -125,8 +120,8 @@ object dm: Tdm
       'advertiser_email=advertiser_email'
       'advertiser_address=advertiser_address')
     DataSource = DSource_Advr
-    Left = 224
-    Top = 216
+    Left = 320
+    Top = 224
   end
   object frxPDFExport1: TfrxPDFExport
     UseFileCache = True
@@ -161,37 +156,25 @@ object dm: Tdm
     PreviewOptions.Zoom = 1.000000000000000000
     PrintOptions.Printer = 'Default'
     PrintOptions.PrintOnSheet = 0
-    ReportOptions.CreateDate = 41103.893660821800000000
-    ReportOptions.LastChange = 41107.495631585610000000
+    ReportOptions.CreateDate = 41103.033297615700000000
+    ReportOptions.LastChange = 41455.101555486110000000
     ScriptLanguage = 'PascalScript'
     ScriptText.Strings = (
       'begin'
       ''
       'end.')
-    Left = 128
-    Top = 328
+    Left = 88
+    Top = 368
     Datasets = <
       item
-        DataSet = dbSettemp
-        DataSetName = 'dbSettemp'
-      end
-      item
-        DataSet = DSetReportAdvertising
-        DataSetName = 'DSetReportAdvertising'
+        DataSet = DsetPayment
+        DataSetName = 'DsetPayment'
       end
       item
         DataSet = frMainMenu.frxLogin
         DataSetName = 'frxLogin'
       end>
-    Variables = <
-      item
-        Name = ' AdminSaction'
-        Value = Null
-      end
-      item
-        Name = 'date1'
-        Value = Null
-      end>
+    Variables = <>
     Style = <
       item
         Name = 'Title'
@@ -262,30 +245,11 @@ object dm: Tdm
       TopMargin = 10.000000000000000000
       BottomMargin = 10.000000000000000000
       object ReportTitle1: TfrxReportTitle
-        Height = 158.740260000000000000
+        Height = 139.842610000000000000
         Top = 18.897650000000000000
         Width = 718.110700000000000000
-        object Memo1: TfrxMemoView
-          Align = baWidth
-          Top = 109.606370000000000000
-          Width = 718.110700000000000000
-          Height = 37.795300000000000000
-          Color = clGray
-          DisplayFormat.DecimalSeparator = ','
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWhite
-          Font.Height = -16
-          Font.Name = 'Arial'
-          Font.Style = [fsBold]
-          Memo.UTF8 = (
-            'ADVERTISING TRANSACTION'
-            ' ')
-          ParentFont = False
-          Style = 'Title'
-          VAlign = vaCenter
-        end
         object Picture1: TfrxPictureView
-          Top = 3.779530000000001000
+          Top = 3.779530000000000000
           Width = 400.000000000000000000
           Height = 90.000000000000000000
           AutoSize = True
@@ -1989,219 +1953,524 @@ object dm: Tdm
             EF7EEBDD7BDFBAF75EF7EEBDD7BDFBAF75EF7EEBDD7FFFD9}
           HightQuality = False
         end
-        object dbSettempdate11: TfrxMemoView
-          Left = 3.779530000000000000
-          Top = 128.504020000000000000
-          Width = 393.071120000000000000
-          Height = 18.897650000000000000
-          DataSet = dbSettemp
-          DataSetName = 'dbSettemp'
+        object Memo2: TfrxMemoView
+          Left = -3.779530000000000000
+          Top = 94.488250000000000000
+          Width = 340.157700000000000000
+          Height = 30.236240000000000000
           DisplayFormat.DecimalSeparator = ','
           Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWhite
-          Font.Height = -13
-          Font.Name = 'arial'
+          Font.Color = clWindowText
+          Font.Height = -21
+          Font.Name = 'Arial'
           Font.Style = [fsBold]
           Memo.UTF8 = (
-            '[dbSettemp."tgl"]')
+            'TRANSAKSI PERIKLANAN')
           ParentFont = False
         end
       end
-      object PageHeader1: TfrxPageHeader
-        Height = 22.677180000000000000
-        Top = 200.315090000000000000
+      object MasterData1: TfrxMasterData
+        Height = 173.858380000000000000
+        Top = 219.212740000000000000
         Width = 718.110700000000000000
+        DataSet = DsetPayment
+        DataSetName = 'DsetPayment'
+        RowCount = 0
         object Shape1: TfrxShapeView
+          Top = 143.622140000000000000
           Width = 718.110700000000000000
-          Height = 22.677180000000000000
+          Height = 30.236240000000000000
         end
         object Memo3: TfrxMemoView
-          Left = 34.015770000000000000
-          Width = 129.522226850000000000
-          Height = 22.677180000000000000
+          Width = 172.632002430000000000
+          Height = 18.897650000000000000
           DisplayFormat.DecimalSeparator = ','
           Font.Charset = DEFAULT_CHARSET
-          Font.Color = clMaroon
+          Font.Color = clBlack
           Font.Height = -13
           Font.Name = 'Arial'
           Font.Style = [fsBold]
-          Frame.Typ = [ftLeft]
-          HAlign = haCenter
           Memo.UTF8 = (
-            'Advertising No')
+            'No. Advertising')
           ParentFont = False
-          VAlign = vaCenter
         end
         object Memo4: TfrxMemoView
-          Left = 163.537996850000000000
-          Width = 114.200883390000000000
-          Height = 22.677180000000000000
+          Left = 561.923592430000000000
+          Width = 67.877381040000000000
+          Height = 18.897650000000000000
           DisplayFormat.DecimalSeparator = ','
           Font.Charset = DEFAULT_CHARSET
-          Font.Color = clMaroon
+          Font.Color = clBlack
           Font.Height = -13
           Font.Name = 'Arial'
           Font.Style = [fsBold]
-          Frame.Typ = [ftLeft]
           Memo.UTF8 = (
-            'Transaction Date')
+            'Tanggal')
           ParentFont = False
-          VAlign = vaCenter
         end
         object Memo5: TfrxMemoView
-          Left = 277.738880240000000000
-          Width = 135.757268660000000000
-          Height = 22.677180000000000000
+          Top = 22.677180000000000000
+          Width = 172.551591840000000000
+          Height = 18.897650000000000000
           DisplayFormat.DecimalSeparator = ','
           Font.Charset = DEFAULT_CHARSET
-          Font.Color = clMaroon
+          Font.Color = clBlack
           Font.Height = -13
           Font.Name = 'Arial'
           Font.Style = [fsBold]
-          Frame.Typ = [ftLeft]
+          Memo.UTF8 = (
+            'No. Id')
+          ParentFont = False
+        end
+        object Memo6: TfrxMemoView
+          Top = 45.354360000000000000
+          Width = 172.075790480000000000
+          Height = 18.897650000000000000
+          DisplayFormat.DecimalSeparator = ','
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Memo.UTF8 = (
+            'Nama')
+          ParentFont = False
+        end
+        object Memo7: TfrxMemoView
+          Top = 68.031540000000000000
+          Width = 174.066068730000000000
+          Height = 18.897650000000000000
+          DisplayFormat.DecimalSeparator = ','
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Memo.UTF8 = (
+            'Organisasi/Perusahaan')
+          ParentFont = False
+        end
+        object Memo8: TfrxMemoView
+          Top = 90.708720000000000000
+          Width = 176.170300640000000000
+          Height = 18.897650000000000000
+          DisplayFormat.DecimalSeparator = ','
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Memo.UTF8 = (
+            'Jabatan')
+          ParentFont = False
+        end
+        object Memo9: TfrxMemoView
+          Left = 30.236240000000000000
+          Top = 143.622140000000000000
+          Width = 52.719055740000000000
+          Height = 30.236240000000000000
+          DisplayFormat.DecimalSeparator = ','
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = [ftRight]
           HAlign = haCenter
           Memo.UTF8 = (
-            'Advertiser Id')
+            'Kode')
           ParentFont = False
           VAlign = vaCenter
         end
-        object Memo6: TfrxMemoView
-          Left = 413.496148900000000000
-          Width = 182.066589760000000000
-          Height = 22.677180000000000000
+        object Memo10: TfrxMemoView
+          Left = 81.004990900000000000
+          Top = 143.622140000000000000
+          Width = 156.636028090000000000
+          Height = 30.236240000000000000
           DisplayFormat.DecimalSeparator = ','
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clMaroon
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clBlack
           Font.Height = -13
           Font.Name = 'Arial'
           Font.Style = [fsBold]
-          Frame.Typ = [ftLeft]
+          Frame.Typ = [ftRight]
           HAlign = haCenter
           Memo.UTF8 = (
-            'Advertiser Name')
+            'Jenis Iklan')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo11: TfrxMemoView
+          Left = 237.641018990000000000
+          Top = 143.622140000000000000
+          Width = 53.235062390000000000
+          Height = 30.236240000000000000
+          DisplayFormat.DecimalSeparator = ','
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = [ftRight]
+          HAlign = haCenter
+          Memo.UTF8 = (
+            'Edisi')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo12: TfrxMemoView
+          Left = 290.876081380000000000
+          Top = 143.622140000000000000
+          Width = 99.386866140000000000
+          Height = 30.236240000000000000
+          DisplayFormat.DecimalSeparator = ','
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = [ftRight]
+          HAlign = haCenter
+          Memo.UTF8 = (
+            'Harga Dasar')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo14: TfrxMemoView
+          Left = 391.341828360000000000
+          Top = 143.622140000000000000
+          Width = 67.877381040000000000
+          Height = 30.236240000000000000
+          DisplayFormat.DecimalSeparator = ','
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = [ftRight]
+          HAlign = haCenter
+          Memo.UTF8 = (
+            'Ukuan')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo15: TfrxMemoView
+          Left = 459.219209400000000000
+          Top = 143.622140000000000000
+          Width = 99.467276740000000000
+          Height = 30.236240000000000000
+          DisplayFormat.DecimalSeparator = ','
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          HAlign = haCenter
+          Memo.UTF8 = (
+            'Harga Jual')
           ParentFont = False
           VAlign = vaCenter
         end
         object Memo16: TfrxMemoView
-          Width = 34.015770000000000000
-          Height = 22.677180000000000000
+          Left = 554.906956140000000000
+          Top = 143.622140000000000000
+          Width = 34.853419050000000000
+          Height = 30.236240000000000000
           DisplayFormat.DecimalSeparator = ','
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clMaroon
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = [ftLeft, ftRight, ftTop]
+          HAlign = haCenter
+          Memo.UTF8 = (
+            'dis'
+            ' (%)')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo17: TfrxMemoView
+          Left = 589.760375180000000000
+          Top = 143.622140000000000000
+          Width = 120.790801040000000000
+          Height = 26.456710000000000000
+          DisplayFormat.DecimalSeparator = ','
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clBlack
           Font.Height = -13
           Font.Name = 'Arial'
           Font.Style = [fsBold]
+          HAlign = haCenter
+          Memo.UTF8 = (
+            'Total Harga')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo18: TfrxMemoView
+          Left = 185.196970000000000000
+          Width = 281.952755905512000000
+          Height = 18.897650000000000000
+          DataField = 'advertising_no'
+          DataSet = DsetPayment
+          DataSetName = 'DsetPayment'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          Memo.UTF8 = (
+            '[DsetPayment."advertising_no"]')
+          ParentFont = False
+          Style = 'Data'
+        end
+        object Memo19: TfrxMemoView
+          Left = 607.277952430000000000
+          Width = 109.452211040000000000
+          Height = 18.897650000000000000
+          DataField = 'trans_date'
+          DataSet = DsetPayment
+          DataSetName = 'DsetPayment'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          HAlign = haRight
+          Memo.UTF8 = (
+            '[DsetPayment."trans_date"]')
+          ParentFont = False
+          Style = 'Data'
+        end
+        object Memo20: TfrxMemoView
+          Left = 185.196850390000000000
+          Top = 22.677180000000100000
+          Width = 281.952755905512000000
+          Height = 18.897650000000000000
+          DataField = 'advertiser_id'
+          DataSet = DsetPayment
+          DataSetName = 'DsetPayment'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          Memo.UTF8 = (
+            '[DsetPayment."advertiser_id"]')
+          ParentFont = False
+          Style = 'Data'
+        end
+        object Memo21: TfrxMemoView
+          Left = 185.196850390000000000
+          Top = 45.354360000000100000
+          Width = 281.952755910000000000
+          Height = 18.897650000000000000
+          DataField = 'advertiser_name'
+          DataSet = DsetPayment
+          DataSetName = 'DsetPayment'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          Memo.UTF8 = (
+            '[DsetPayment."advertiser_name"]')
+          ParentFont = False
+          Style = 'Data'
+        end
+        object Memo22: TfrxMemoView
+          Left = 185.196850390000000000
+          Top = 68.031540000000000000
+          Width = 281.952755910000000000
+          Height = 18.897650000000000000
+          DataField = 'organization_name'
+          DataSet = DsetPayment
+          DataSetName = 'DsetPayment'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          Memo.UTF8 = (
+            '[DsetPayment."organization_name"]')
+          ParentFont = False
+          Style = 'Data'
+        end
+        object Memo23: TfrxMemoView
+          Left = 185.196850390000000000
+          Top = 90.708720000000300000
+          Width = 281.997140640000000000
+          Height = 18.897650000000000000
+          DataField = 'positions'
+          DataSet = DsetPayment
+          DataSetName = 'DsetPayment'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          Memo.UTF8 = (
+            '[DsetPayment."positions"]')
+          ParentFont = False
+          Style = 'Data'
+        end
+        object Memo37: TfrxMemoView
+          Top = 143.622140000000000000
+          Width = 30.236240000000000000
+          Height = 30.236240000000000000
+          DisplayFormat.DecimalSeparator = ','
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = [ftRight]
           HAlign = haCenter
           Memo.UTF8 = (
             'No')
           ParentFont = False
           VAlign = vaCenter
         end
-        object Memo7: TfrxMemoView
-          Left = 591.783208660000000000
-          Width = 126.327027560000000000
-          Height = 22.677180000000000000
-          DisplayFormat.DecimalSeparator = ','
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clMaroon
-          Font.Height = -13
-          Font.Name = 'Arial'
-          Font.Style = [fsBold]
-          Frame.Typ = [ftLeft]
-          HAlign = haCenter
-          Memo.UTF8 = (
-            'Pay Total')
-          ParentFont = False
-          VAlign = vaCenter
-        end
       end
-      object MasterData1: TfrxMasterData
+      object DetailData1: TfrxDetailData
         Height = 18.897650000000000000
-        Top = 283.464750000000000000
+        Top = 415.748300000000000000
         Width = 718.110700000000000000
-        DataSet = DSetReportAdvertising
-        DataSetName = 'DSetReportAdvertising'
+        DataSet = DsetPayment
+        DataSetName = 'DsetPayment'
         RowCount = 0
-        object Memo8: TfrxMemoView
-          Left = 34.015770000000000000
-          Width = 125.742696850000000000
+        object Memo24: TfrxMemoView
+          Left = 30.236240000000000000
+          Width = 52.719055740000000000
           Height = 18.897650000000000000
-          DataSet = DSetReportAdvertising
-          DataSetName = 'DSetReportAdvertising'
-          DisplayFormat.DecimalSeparator = ','
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -13
-          Font.Name = 'Arial'
-          Font.Style = []
-          Frame.Typ = [ftLeft]
-          Memo.UTF8 = (
-            ' [DSetReportAdvertising."advertising_no"]')
-          ParentFont = False
-          VAlign = vaCenter
-        end
-        object Memo9: TfrxMemoView
-          Left = 163.537996850000000000
-          Width = 106.641823390000000000
-          Height = 18.897650000000000000
-          DataSet = DSetReportAdvertising
-          DataSetName = 'DSetReportAdvertising'
-          DisplayFormat.DecimalSeparator = ','
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -13
-          Font.Name = 'Arial'
-          Font.Style = []
-          Frame.Typ = [ftLeft]
-          HAlign = haCenter
-          Memo.UTF8 = (
-            ' [DSetReportAdvertising."trans_date"]')
-          ParentFont = False
-          VAlign = vaCenter
-        end
-        object Memo10: TfrxMemoView
-          Left = 277.738880240000000000
-          Width = 135.757268660000000000
-          Height = 18.897650000000000000
-          DataField = 'advertiser_id'
-          DataSet = DSetReportAdvertising
-          DataSetName = 'DSetReportAdvertising'
+          DataField = 'adv_code'
+          DataSet = DsetPayment
+          DataSetName = 'DsetPayment'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
           Font.Height = -13
           Font.Name = 'Arial'
           Font.Style = []
           Frame.Typ = [ftLeft, ftRight]
+          HAlign = haCenter
           Memo.UTF8 = (
-            '[DSetReportAdvertising."advertiser_id"]')
+            '[DsetPayment."adv_code"]')
           ParentFont = False
-          VAlign = vaCenter
         end
-        object Memo11: TfrxMemoView
-          Left = 413.496148900000000000
-          Width = 178.287059760000000000
+        object Memo25: TfrxMemoView
+          Left = 88.564050900000000000
+          Width = 149.076968090000000000
           Height = 18.897650000000000000
-          DataField = 'advertiser_name'
-          DataSet = DSetReportAdvertising
-          DataSetName = 'DSetReportAdvertising'
+          DataField = 'adv_type'
+          DataSet = DsetPayment
+          DataSetName = 'DsetPayment'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          Memo.UTF8 = (
+            '[DsetPayment."adv_type"]')
+          ParentFont = False
+        end
+        object Memo26: TfrxMemoView
+          Left = 237.641018990000000000
+          Width = 53.235062390000000000
+          Height = 18.897650000000000000
+          DataField = 'edition'
+          DataSet = DsetPayment
+          DataSetName = 'DsetPayment'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = [ftLeft]
+          HAlign = haCenter
+          Memo.UTF8 = (
+            '[DsetPayment."edition"]')
+          ParentFont = False
+        end
+        object Memo27: TfrxMemoView
+          Left = 290.876081380000000000
+          Width = 99.386866140000000000
+          Height = 18.897650000000000000
+          DataSet = DsetPayment
+          DataSetName = 'DsetPayment'
+          DisplayFormat.DecimalSeparator = ','
+          DisplayFormat.FormatStr = 'Rp. #,###'
+          DisplayFormat.Kind = fkNumeric
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = [ftLeft]
+          HAlign = haRight
+          Memo.UTF8 = (
+            '[DsetPayment."base_price"]')
+          ParentFont = False
+        end
+        object Memo28: TfrxMemoView
+          Left = 390.262947520000000000
+          Width = 19.976530840000000000
+          Height = 18.897650000000000000
+          DataField = 'col_count'
+          DataSet = DsetPayment
+          DataSetName = 'DsetPayment'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = [ftLeft]
+          HAlign = haCenter
+          Memo.UTF8 = (
+            '[DsetPayment."col_count"]')
+          ParentFont = False
+        end
+        object Memo29: TfrxMemoView
+          Left = 436.696188360000000000
+          Width = 22.523021040000000000
+          Height = 18.897650000000000000
+          DataField = 'col_height'
+          DataSet = DsetPayment
+          DataSetName = 'DsetPayment'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
           Font.Height = -13
           Font.Name = 'Arial'
           Font.Style = []
           Frame.Typ = [ftRight]
+          HAlign = haCenter
           Memo.UTF8 = (
-            '[DSetReportAdvertising."advertiser_name"]')
+            '[DsetPayment."col_height"]')
           ParentFont = False
-          VAlign = vaCenter
         end
-        object Memo12: TfrxMemoView
-          Left = 591.783208660000000000
-          Width = 126.327027560000000000
+        object Memo31: TfrxMemoView
+          Left = 558.686486140000000000
+          Width = 31.073889050000000000
           Height = 18.897650000000000000
-          DataField = 'pay_total'
-          DataSet = DSetReportAdvertising
-          DataSetName = 'DSetReportAdvertising'
+          DataField = 'disc'
+          DataSet = DsetPayment
+          DataSetName = 'DsetPayment'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = [ftRight]
+          HAlign = haCenter
+          Memo.UTF8 = (
+            '[DsetPayment."disc"]')
+          ParentFont = False
+        end
+        object Memo32: TfrxMemoView
+          Left = 589.760375180000000000
+          Width = 128.349861040000000000
+          Height = 18.897650000000000000
+          DataSet = DsetPayment
+          DataSetName = 'DsetPayment'
           DisplayFormat.DecimalSeparator = ','
           DisplayFormat.FormatStr = 'Rp. #,###'
           DisplayFormat.Kind = fkNumeric
@@ -2213,61 +2482,117 @@ object dm: Tdm
           Frame.Typ = [ftRight]
           HAlign = haRight
           Memo.UTF8 = (
-            '[DSetReportAdvertising."pay_total"]')
+            '[DsetPayment."price_total"]')
           ParentFont = False
         end
-        object SysMemo1: TfrxSysMemoView
-          Width = 34.015770000000000000
-          Height = 18.897650000000000000
+        object Memo13: TfrxMemoView
+          Left = 419.527830000000000000
+          Top = 3.779530000000080000
+          Width = 15.118120000000000000
+          Height = 11.338590000000000000
+          DisplayFormat.DecimalSeparator = ','
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -13
           Font.Name = 'Arial'
           Font.Style = []
-          Frame.Typ = [ftLeft]
+          Memo.UTF8 = (
+            'X')
+          ParentFont = False
+        end
+        object Memo30: TfrxMemoView
+          Left = 461.102660000000000000
+          Width = 94.488250000000000000
+          Height = 18.897650000000000000
+          DisplayFormat.DecimalSeparator = ','
+          DisplayFormat.FormatStr = 'Rp. #,###'
+          DisplayFormat.Kind = fkNumeric
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = [ftRight]
+          HAlign = haRight
+          Memo.UTF8 = (
+            '[DsetPayment."selling_price"]')
+          ParentFont = False
+        end
+        object SysMemo2: TfrxSysMemoView
+          Width = 30.236240000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = [ftLeft, ftRight]
           HAlign = haCenter
           Memo.UTF8 = (
             '[LINE#]')
           ParentFont = False
-          VAlign = vaCenter
-        end
-      end
-      object PageFooter1: TfrxPageFooter
-        Height = 61.472480000000000000
-        Top = 540.472790000000000000
-        Width = 718.110700000000000000
-        object Memo13: TfrxMemoView
-          Align = baWidth
-          Width = 718.110700000000000000
-          Frame.Typ = [ftTop]
-          Frame.Width = 2.000000000000000000
-        end
-        object Memo14: TfrxMemoView
-          Top = 1.000000000000000000
-          Height = 22.677180000000000000
-          AutoWidth = True
-          Memo.UTF8 = (
-            '[Date] [Time]')
-        end
-        object Memo15: TfrxMemoView
-          Align = baRight
-          Left = 631.181510000000000000
-          Top = 1.000000000000000000
-          Width = 86.929190000000000000
-          Height = 22.677180000000000000
-          HAlign = haRight
-          Memo.UTF8 = (
-            'Page [Page#]')
         end
       end
       object Footer1: TfrxFooter
-        Height = 154.960730000000000000
-        Top = 325.039580000000000000
+        Height = 192.756030000000000000
+        Top = 457.323130000000000000
         Width = 718.110700000000000000
+        object Shape2: TfrxShapeView
+          Width = 718.110700000000000000
+          Height = 18.897650000000000000
+        end
+        object Memo36: TfrxMemoView
+          Width = 582.047620000000000000
+          Height = 18.897650000000000000
+          DisplayFormat.DecimalSeparator = ','
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          HAlign = haCenter
+          Memo.UTF8 = (
+            'TOTAL')
+          ParentFont = False
+        end
+        object SysMemo1: TfrxSysMemoView
+          Left = 589.984251968504000000
+          Width = 128.504020000000000000
+          Height = 19.275590551181100000
+          DisplayFormat.DecimalSeparator = ','
+          DisplayFormat.FormatStr = 'Rp. #,###'
+          DisplayFormat.Kind = fkNumeric
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = [ftLeft]
+          HAlign = haRight
+          Memo.UTF8 = (
+            '[SUM(<DsetPayment."price_total">,DetailData1)]')
+          ParentFont = False
+        end
+        object Memo1: TfrxMemoView
+          Left = 555.590910000000000000
+          Top = 68.031540000000000000
+          Width = 143.622140000000000000
+          Height = 18.897650000000000000
+          DisplayFormat.DecimalSeparator = ','
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          HAlign = haCenter
+          Memo.UTF8 = (
+            'Bagian Administrasi')
+          ParentFont = False
+        end
         object frxLoginname: TfrxMemoView
-          Left = 532.913730000000000000
-          Top = 109.606370000000000000
-          Width = 154.960730000000000000
+          Left = 555.590910000000000000
+          Top = 139.842610000000000000
+          Width = 143.622140000000000000
           Height = 18.897650000000000000
           DataField = 'name'
           DataSet = frMainMenu.frxLogin
@@ -2281,73 +2606,11 @@ object dm: Tdm
           Memo.UTF8 = (
             '[frxLogin."name"]')
           ParentFont = False
-          VAlign = vaCenter
-        end
-        object Line1: TfrxLineView
-          Width = 718.110700000000000000
-          Frame.Typ = [ftTop]
-        end
-        object SysMemo2: TfrxSysMemoView
-          Left = 592.629921260000000000
-          Width = 125.480314960000000000
-          Height = 22.677165350000000000
-          DisplayFormat.DecimalSeparator = ','
-          DisplayFormat.FormatStr = 'Rp. #,###'
-          DisplayFormat.Kind = fkNumeric
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -13
-          Font.Name = 'Arial'
-          Font.Style = []
-          Frame.Typ = [ftLeft, ftRight]
-          HAlign = haRight
-          Memo.UTF8 = (
-            '[SUM(<DSetReportAdvertising."pay_total">,MasterData1)]')
-          ParentFont = False
-          VAlign = vaCenter
-        end
-        object Line2: TfrxLineView
-          Top = 22.677180000000020000
-          Width = 718.866141732284000000
-          Frame.Typ = [ftTop]
-        end
-        object Memo2: TfrxMemoView
-          Width = 593.386210000000000000
-          Height = 22.677180000000000000
-          DisplayFormat.DecimalSeparator = ','
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clMaroon
-          Font.Height = -13
-          Font.Name = 'Arial'
-          Font.Style = [fsBold]
-          Frame.Typ = [ftLeft]
-          HAlign = haCenter
-          Memo.UTF8 = (
-            'Total')
-          ParentFont = False
-          VAlign = vaCenter
-        end
-        object Memo17: TfrxMemoView
-          Left = 532.913730000000000000
-          Top = 52.913419999999970000
-          Width = 154.960730000000000000
-          Height = 18.897650000000000000
-          DisplayFormat.DecimalSeparator = ','
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clBlack
-          Font.Height = -13
-          Font.Name = 'Arial'
-          Font.Style = []
-          HAlign = haCenter
-          Memo.UTF8 = (
-            'Administration Section')
-          ParentFont = False
         end
       end
     end
   end
   object QPayment: TADOQuery
-    Active = True
     Connection = AdoConn
     CursorType = ctStatic
     Parameters = <>
@@ -2364,8 +2627,8 @@ object dm: Tdm
         'sion.invoice_no=detail_taking_commission.invoice_no) ON sales_co' +
         'mmission.advertising_no=detail_taking_commission.advertising_no)' +
         ' ON sales.sales_regno=sales_commission.sales_regno')
-    Left = 312
-    Top = 112
+    Left = 408
+    Top = 104
   end
   object DsetPayment: TfrxDBDataset
     UserName = 'DsetPayment'
@@ -2387,12 +2650,12 @@ object dm: Tdm
       'disc=disc'
       'price_total=price_total')
     DataSource = DSource_Payment
-    Left = 312
-    Top = 224
+    Left = 408
+    Top = 232
   end
   object DSource_Payment: TDataSource
     DataSet = QPayment
-    Left = 312
+    Left = 416
     Top = 168
   end
   object DsetInvoice: TfrxDBDataset
@@ -2408,8 +2671,8 @@ object dm: Tdm
       'sales_commission=sales_commission'
       'commission_nominal=commission_nominal')
     DataSource = DSource_Payment
-    Left = 312
-    Top = 280
+    Left = 408
+    Top = 288
   end
   object DSetReportAdvertising: TfrxDBDataset
     UserName = 'DSetReportAdvertising'
@@ -2421,20 +2684,20 @@ object dm: Tdm
       'advertiser_name=advertiser_name'
       'pay_total=pay_total')
     DataSource = DSource_Report
-    Left = 472
-    Top = 240
+    Left = 512
+    Top = 224
   end
   object QReport: TADOQuery
     Connection = AdoConn
     CursorType = ctStatic
     Parameters = <>
-    Left = 472
+    Left = 512
     Top = 112
   end
   object DSource_Report: TDataSource
     DataSet = QReport
-    Left = 472
-    Top = 176
+    Left = 512
+    Top = 160
   end
   object frxRTFExport1: TfrxRTFExport
     UseFileCache = True
@@ -2475,20 +2738,20 @@ object dm: Tdm
     FieldAliases.Strings = (
       'tgl=tgl')
     DataSource = dsTemp
-    Left = 664
-    Top = 408
+    Left = 520
+    Top = 384
   end
   object dsTemp: TDataSource
     DataSet = qryTemp
-    Left = 664
-    Top = 352
+    Left = 576
+    Top = 384
   end
   object qryTemp: TADOQuery
     Connection = AdoConn
     CursorType = ctStatic
     Parameters = <>
-    Left = 664
-    Top = 296
+    Left = 472
+    Top = 384
   end
   object DSetReportCommission: TfrxDBDataset
     UserName = 'DSetReportCommission'
@@ -2501,7 +2764,7 @@ object dm: Tdm
       'commission_total=commission_total'
       'status=status')
     DataSource = DSource_Report
-    Left = 472
-    Top = 304
+    Left = 528
+    Top = 288
   end
 end

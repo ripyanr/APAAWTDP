@@ -143,7 +143,7 @@ begin
        skode:=copy('000',1,3- length(skode))+skode;
        if ikode > 999 then
        begin
-          ShowMessage('Advertiser id already full !');
+          ShowMessage('id Advertiser sudah penuh !');
           close;
        end;
        tNoID_Adsr.Text:=skode+'/CUST/DP/'+sMonth+'/'+FormatDateTime('yy',Now);
@@ -443,7 +443,7 @@ begin
       (Trim(TEdit(Components[i]).Text)='') then
       begin
         TEdit(Components[i]).SetFocus;
-        lblInfo.Caption:='Please don`t empty The Textbox focused';
+        lblInfo.Caption:='anda harus mengisi isian tersebut !';
         exit;
       end;
     if Components[i] is TComboBox then
@@ -451,7 +451,7 @@ begin
       (Trim(TComboBox(Components[i]).Text)='') then
       begin
         TComboBox(Components[i]).SetFocus;
-        lblInfo.Caption:='Please don`t empty The Combobox focused';
+        lblInfo.Caption:='anda harus mengisi isian tersebut';
         exit;
       end;
     if Components[i] is TMemo then
@@ -459,7 +459,7 @@ begin
       (Trim(TMemo(Components[i]).Text)='') then
       begin
         TMemo(Components[i]).SetFocus;
-        lblInfo.Caption:='Please don`t empty Address textbox !';
+        lblInfo.Caption:='anda harus mengisi isian tersebut !';
         exit;
       end;
     end;
@@ -471,7 +471,7 @@ begin
       if not EmailValidation(tEmail.Text) then
       begin
         tEmail.SetFocus;
-        lblInfo.Caption:='Wrong E-Mail writing ! (exaple :email_name@domain_neme.com)';
+        lblInfo.Caption:='Salah menulis email ! (contoh yang benar :email_name@domain_neme.com)';
         Exit;
       end;
     end;
@@ -483,7 +483,7 @@ begin
       if not EmailValidation(tEmail_Adsr.Text) then
       begin
         tEmail_Adsr.SetFocus;
-        lblInfo.Caption:='Wrong E-Mail writing ! (exaple :email_name@domain_neme.com)';
+        lblInfo.Caption:='Salah menulis email ! (contoh yang benar :email_name@domain_neme.com)';
         Exit;
       end;
     end;
@@ -537,7 +537,7 @@ begin
   check_Advt:=0;
 
   bAddClick(Self);
-  lblInfo.Caption:='Data Cleared..... !';
+  lblInfo.Caption:='Data dihapus.... !';
  end;
 end;
 

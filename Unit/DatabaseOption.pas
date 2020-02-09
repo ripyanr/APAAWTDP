@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, Buttons,IniFiles;
+  Dialogs, StdCtrls, Buttons,IniFiles, acPNG, ExtCtrls;
 
 type
   TfrDatabaseOption = class(TForm)
@@ -12,6 +12,9 @@ type
     bBrowse: TBitBtn;
     bConnection: TButton;
     odlg_DBOption: TOpenDialog;
+    Image1: TImage;
+    Label1: TLabel;
+    Label2: TLabel;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure bBrowseClick(Sender: TObject);
     procedure bConnectionClick(Sender: TObject);
@@ -43,7 +46,7 @@ begin
   end;
   if (not FileExists(sPath)) and (Trim(sPath)<>'') then
   begin
-    ShowMessage('You most selected database !');
+    ShowMessage('Pilih database terlebih dahulu !');
     exit
   end;
   With dm.AdoConn do
@@ -66,7 +69,7 @@ begin
       Except
         on EOleException do
           begin
-            ShowMessage('Connection Failed, please select database !');
+            ShowMessage('Koneksi gagal !');
             Connected:=False;
             frDatabaseOption.ShowModal;
           end;

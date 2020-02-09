@@ -1,8 +1,9 @@
 object frAdvertisingTrans: TfrAdvertisingTrans
-  Left = 605
-  Top = 26
-  Width = 1097
+  Left = 281
+  Top = 25
+  Width = 958
   Height = 683
+  Caption = 'Menu Transaksi'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -18,7 +19,7 @@ object frAdvertisingTrans: TfrAdvertisingTrans
   object PageControl1: TPageControl
     Left = 0
     Top = 0
-    Width = 1081
+    Width = 942
     Height = 645
     ActivePage = TabCommission
     Align = alClient
@@ -33,54 +34,54 @@ object frAdvertisingTrans: TfrAdvertisingTrans
     TabStop = False
     OnChange = PageControl1Change
     object TabAdversiting_Trans: TTabSheet
-      Caption = 'Advertising Transaction'
+      Caption = 'Transaksi Periklanan'
       DesignSize = (
-        1073
+        934
         616)
       object bAdd: TSpeedButton
-        Left = 0
-        Top = 16
-        Width = 65
-        Height = 65
+        Left = 8
+        Top = 568
+        Width = 49
+        Height = 41
         Caption = 'Add'
         Flat = True
         OnClick = bAddClick
       end
       object bSave: TSpeedButton
-        Left = 0
-        Top = 88
-        Width = 65
-        Height = 65
+        Left = 64
+        Top = 568
+        Width = 49
+        Height = 41
         Caption = 'Save'
         Flat = True
         OnClick = bSaveClick
       end
       object Bevel1: TBevel
-        Left = 72
+        Left = 8
         Top = 8
-        Width = 337
+        Width = 313
         Height = 441
         Shape = bsFrame
       end
       object Bevel2: TBevel
-        Left = 416
+        Left = 328
         Top = 8
-        Width = 361
+        Width = 321
         Height = 441
         Shape = bsFrame
       end
       object bClose: TSpeedButton
-        Left = 0
-        Top = 146
-        Width = 65
-        Height = 65
+        Left = 120
+        Top = 570
+        Width = 49
+        Height = 39
         Anchors = [akLeft, akBottom]
         Caption = 'Close'
         Flat = True
         OnClick = bCloseClick
       end
       object bReset: TSpeedButton
-        Left = 72
+        Left = 176
         Top = 571
         Width = 57
         Height = 39
@@ -90,41 +91,42 @@ object frAdvertisingTrans: TfrAdvertisingTrans
         OnClick = bResetClick
       end
       object Bevel3: TBevel
-        Left = 784
+        Left = 656
         Top = 8
         Width = 281
-        Height = 417
+        Height = 441
         Shape = bsFrame
       end
-      object Label22: TLabel
-        Left = 880
-        Top = 432
-        Width = 111
-        Height = 14
-        Caption = 'Scale  1mm : 1 px'
-      end
       object Label23: TLabel
-        Left = 848
-        Top = 16
-        Width = 143
+        Left = 664
+        Top = 24
+        Width = 85
         Height = 14
-        Caption = 'POSITION ADVERISING'
+        Alignment = taCenter
+        Caption = 'POSISI IKLAN'
+      end
+      object Label22: TLabel
+        Left = 736
+        Top = 432
+        Width = 117
+        Height = 14
+        Caption = 'SKALA  1mm : 1 px'
       end
       object pnlDetail: TPanel
-        Left = 136
+        Left = 240
         Top = 571
-        Width = 929
+        Width = 697
         Height = 41
         Anchors = [akLeft, akBottom]
         BevelInner = bvLowered
         Enabled = False
         TabOrder = 9
         object Label21: TLabel
-          Left = 560
+          Left = 328
           Top = 11
-          Width = 75
+          Width = 92
           Height = 16
-          Caption = 'PAY TOTAL'
+          Caption = 'TOTAL BAYAR'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
           Font.Height = -13
@@ -133,7 +135,7 @@ object frAdvertisingTrans: TfrAdvertisingTrans
           ParentFont = False
         end
         object tTotal_Pay: TMemo
-          Left = 656
+          Left = 432
           Top = 8
           Width = 257
           Height = 25
@@ -149,9 +151,9 @@ object frAdvertisingTrans: TfrAdvertisingTrans
         end
       end
       object pnlTrans: TPanel
-        Left = 80
+        Left = 16
         Top = 16
-        Width = 321
+        Width = 297
         Height = 97
         TabOrder = 0
         object Label1: TLabel
@@ -170,9 +172,9 @@ object frAdvertisingTrans: TfrAdvertisingTrans
         object Label2: TLabel
           Left = 8
           Top = 64
-          Width = 135
+          Width = 141
           Height = 16
-          Caption = 'TRANSACTION DATE'
+          Caption = 'TANGGAL TRANSAKSI'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
           Font.Height = -13
@@ -181,7 +183,7 @@ object frAdvertisingTrans: TfrAdvertisingTrans
           ParentFont = False
         end
         object dtDate_Trans: TDateTimePicker
-          Left = 184
+          Left = 160
           Top = 56
           Width = 129
           Height = 24
@@ -196,9 +198,9 @@ object frAdvertisingTrans: TfrAdvertisingTrans
           TabOrder = 1
         end
         object tNo_Trans: TEdit
-          Left = 128
+          Left = 136
           Top = 20
-          Width = 185
+          Width = 153
           Height = 24
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
@@ -213,9 +215,9 @@ object frAdvertisingTrans: TfrAdvertisingTrans
         end
       end
       object pnlSales: TPanel
-        Left = 80
+        Left = 16
         Top = 120
-        Width = 321
+        Width = 297
         Height = 153
         TabOrder = 3
         object Label3: TLabel
@@ -247,9 +249,9 @@ object frAdvertisingTrans: TfrAdvertisingTrans
         object Label5: TLabel
           Left = 16
           Top = 88
-          Width = 37
+          Width = 38
           Height = 16
-          Caption = 'NAME'
+          Caption = 'NAMA'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
           Font.Height = -13
@@ -288,9 +290,9 @@ object frAdvertisingTrans: TfrAdvertisingTrans
         object Label24: TLabel
           Left = 16
           Top = 120
-          Width = 88
+          Width = 48
           Height = 16
-          Caption = 'COMMISSION'
+          Caption = 'KOMISI'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
           Font.Height = -13
@@ -313,18 +315,18 @@ object frAdvertisingTrans: TfrAdvertisingTrans
           ParentFont = False
         end
         object bClear: TSpeedButton
-          Left = 256
+          Left = 216
           Top = 120
           Width = 57
           Height = 25
-          Caption = 'Clear'
+          Caption = 'clear'
           Flat = True
           OnClick = bClearClick
         end
         object tFind_Sls: TEdit
           Left = 8
           Top = 32
-          Width = 281
+          Width = 265
           Height = 24
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
@@ -356,17 +358,17 @@ object frAdvertisingTrans: TfrAdvertisingTrans
         end
       end
       object pnlAdsr: TPanel
-        Left = 80
+        Left = 16
         Top = 280
-        Width = 321
+        Width = 297
         Height = 161
         TabOrder = 5
         object Label6: TLabel
           Left = 8
           Top = 8
-          Width = 82
+          Width = 115
           Height = 16
-          Caption = 'ADVERTISER'
+          Caption = 'PEMASANG IKLAN'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
           Font.Height = -13
@@ -390,9 +392,9 @@ object frAdvertisingTrans: TfrAdvertisingTrans
         object Label8: TLabel
           Left = 8
           Top = 72
-          Width = 37
+          Width = 38
           Height = 16
-          Caption = 'NAME'
+          Caption = 'NAMA'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
           Font.Height = -13
@@ -431,9 +433,9 @@ object frAdvertisingTrans: TfrAdvertisingTrans
         object Label25: TLabel
           Left = 8
           Top = 88
-          Width = 107
+          Width = 88
           Height = 32
-          Caption = 'ORGANIZATION/'#13#10'COMPANY'
+          Caption = 'ORGANISASI/'#13#10'PERUSAHAAN'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
           Font.Height = -13
@@ -444,9 +446,9 @@ object frAdvertisingTrans: TfrAdvertisingTrans
         object Label26: TLabel
           Left = 8
           Top = 128
-          Width = 65
+          Width = 59
           Height = 16
-          Caption = 'POSITION'
+          Caption = 'JABATAN'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
           Font.Height = -13
@@ -483,7 +485,7 @@ object frAdvertisingTrans: TfrAdvertisingTrans
           ParentFont = False
         end
         object SpeedButton1: TSpeedButton
-          Left = 264
+          Left = 240
           Top = 24
           Width = 49
           Height = 25
@@ -500,7 +502,7 @@ object frAdvertisingTrans: TfrAdvertisingTrans
         object tFind_Adsr: TEdit
           Left = 8
           Top = 24
-          Width = 249
+          Width = 225
           Height = 24
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
@@ -517,17 +519,17 @@ object frAdvertisingTrans: TfrAdvertisingTrans
         end
       end
       object pnlEdition: TPanel
-        Left = 424
+        Left = 336
         Top = 176
-        Width = 345
+        Width = 305
         Height = 121
         TabOrder = 4
         object Label12: TLabel
           Left = 8
           Top = 16
-          Width = 55
+          Width = 36
           Height = 16
-          Caption = 'EDITION'
+          Caption = 'EDISI'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
           Font.Height = -13
@@ -538,9 +540,9 @@ object frAdvertisingTrans: TfrAdvertisingTrans
         object Label13: TLabel
           Left = 8
           Top = 48
-          Width = 34
+          Width = 63
           Height = 16
-          Caption = 'PAGE'
+          Caption = 'HALAMAN'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
           Font.Height = -13
@@ -549,11 +551,11 @@ object frAdvertisingTrans: TfrAdvertisingTrans
           ParentFont = False
         end
         object Label14: TLabel
-          Left = 192
+          Left = 136
           Top = 8
-          Width = 70
+          Width = 93
           Height = 16
-          Caption = 'FIRST COL'
+          Caption = 'KLM PERTAMA'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
           Font.Height = -13
@@ -562,11 +564,11 @@ object frAdvertisingTrans: TfrAdvertisingTrans
           ParentFont = False
         end
         object Label15: TLabel
-          Left = 184
+          Left = 136
           Top = 40
-          Width = 77
+          Width = 55
           Height = 16
-          Caption = 'COL COUNT'
+          Caption = 'JML KLM'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
           Font.Height = -13
@@ -575,11 +577,11 @@ object frAdvertisingTrans: TfrAdvertisingTrans
           ParentFont = False
         end
         object Label16: TLabel
-          Left = 192
+          Left = 136
           Top = 72
-          Width = 71
+          Width = 94
           Height = 16
-          Caption = 'FISRT POS'
+          Caption = 'POS PERTAMA'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
           Font.Height = -13
@@ -588,11 +590,11 @@ object frAdvertisingTrans: TfrAdvertisingTrans
           ParentFont = False
         end
         object Label17: TLabel
-          Left = 184
+          Left = 136
           Top = 96
-          Width = 80
+          Width = 77
           Height = 16
-          Caption = 'COL HEIGHT'
+          Caption = 'TINGGI KLM'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
           Font.Height = -13
@@ -601,7 +603,7 @@ object frAdvertisingTrans: TfrAdvertisingTrans
           ParentFont = False
         end
         object tHeight: TEdit
-          Left = 278
+          Left = 238
           Top = 92
           Width = 40
           Height = 24
@@ -619,7 +621,7 @@ object frAdvertisingTrans: TfrAdvertisingTrans
           OnKeyPress = tHeightKeyPress
         end
         object tFirstPost: TEdit
-          Left = 278
+          Left = 238
           Top = 66
           Width = 40
           Height = 24
@@ -636,7 +638,7 @@ object frAdvertisingTrans: TfrAdvertisingTrans
           OnKeyPress = tFirstPostKeyPress
         end
         object tLastColumn: TEdit
-          Left = 278
+          Left = 238
           Top = 35
           Width = 40
           Height = 24
@@ -653,7 +655,7 @@ object frAdvertisingTrans: TfrAdvertisingTrans
           OnKeyPress = tLastColumnKeyPress
         end
         object tFirstColumn: TEdit
-          Left = 278
+          Left = 238
           Top = 8
           Width = 40
           Height = 24
@@ -704,7 +706,7 @@ object frAdvertisingTrans: TfrAdvertisingTrans
           OnKeyPress = tEditionKeyPress
         end
         object UpDown1: TUpDown
-          Left = 320
+          Left = 280
           Top = 8
           Width = 17
           Height = 23
@@ -713,7 +715,7 @@ object frAdvertisingTrans: TfrAdvertisingTrans
           OnClick = UpDown1Click
         end
         object UpDown2: TUpDown
-          Left = 320
+          Left = 280
           Top = 32
           Width = 17
           Height = 23
@@ -721,7 +723,7 @@ object frAdvertisingTrans: TfrAdvertisingTrans
           OnClick = UpDown2Click
         end
         object UpDown3: TUpDown
-          Left = 320
+          Left = 280
           Top = 66
           Width = 17
           Height = 23
@@ -729,7 +731,7 @@ object frAdvertisingTrans: TfrAdvertisingTrans
           OnClick = UpDown3Click
         end
         object UpDown4: TUpDown
-          Left = 320
+          Left = 280
           Top = 92
           Width = 17
           Height = 23
@@ -738,17 +740,17 @@ object frAdvertisingTrans: TfrAdvertisingTrans
         end
       end
       object pnlPrice: TPanel
-        Left = 424
+        Left = 336
         Top = 304
-        Width = 345
+        Width = 305
         Height = 137
         TabOrder = 6
         object Label18: TLabel
           Left = 8
           Top = 16
-          Width = 97
+          Width = 80
           Height = 16
-          Caption = 'SELLING PRICE'
+          Caption = 'HARGA JUAL'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
           Font.Height = -13
@@ -759,9 +761,9 @@ object frAdvertisingTrans: TfrAdvertisingTrans
         object Label19: TLabel
           Left = 8
           Top = 48
-          Width = 69
+          Width = 50
           Height = 16
-          Caption = 'DISCOUNT'
+          Caption = 'DISKON'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
           Font.Height = -13
@@ -772,9 +774,9 @@ object frAdvertisingTrans: TfrAdvertisingTrans
         object Label20: TLabel
           Left = 8
           Top = 80
-          Width = 87
+          Width = 92
           Height = 16
-          Caption = 'TOTAL PRICE'
+          Caption = 'TOTAL BAYAR'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
           Font.Height = -13
@@ -783,11 +785,11 @@ object frAdvertisingTrans: TfrAdvertisingTrans
           ParentFont = False
         end
         object lbNextEditionCount: TLabel
-          Left = 74
+          Left = 18
           Top = 113
-          Width = 146
+          Width = 163
           Height = 16
-          Caption = 'NEXT EDITION COUNT'
+          Caption = 'Jml utk Edisi Selanjutnya'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
           Font.Height = -13
@@ -796,9 +798,9 @@ object frAdvertisingTrans: TfrAdvertisingTrans
           ParentFont = False
         end
         object tSelling_Price: TEdit
-          Left = 144
+          Left = 136
           Top = 12
-          Width = 193
+          Width = 161
           Height = 24
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
@@ -812,9 +814,9 @@ object frAdvertisingTrans: TfrAdvertisingTrans
           OnKeyPress = tSelling_PriceKeyPress
         end
         object tTot_Price: TEdit
-          Left = 144
+          Left = 136
           Top = 76
-          Width = 193
+          Width = 161
           Height = 24
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
@@ -826,7 +828,7 @@ object frAdvertisingTrans: TfrAdvertisingTrans
           TabOrder = 3
         end
         object tDisc: TEdit
-          Left = 144
+          Left = 136
           Top = 44
           Width = 41
           Height = 24
@@ -843,9 +845,9 @@ object frAdvertisingTrans: TfrAdvertisingTrans
           OnKeyPress = tDiscKeyPress
         end
         object tNominal_Disc: TEdit
-          Left = 192
+          Left = 184
           Top = 44
-          Width = 145
+          Width = 113
           Height = 24
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
@@ -857,7 +859,7 @@ object frAdvertisingTrans: TfrAdvertisingTrans
           TabOrder = 2
         end
         object tNext_EdCount: TEdit
-          Left = 232
+          Left = 192
           Top = 105
           Width = 41
           Height = 24
@@ -874,7 +876,7 @@ object frAdvertisingTrans: TfrAdvertisingTrans
           OnKeyPress = tNext_EdCountKeyPress
         end
         object bINSERT: TBitBtn
-          Left = 280
+          Left = 240
           Top = 104
           Width = 57
           Height = 25
@@ -884,17 +886,17 @@ object frAdvertisingTrans: TfrAdvertisingTrans
         end
       end
       object pnlAdvt: TPanel
-        Left = 424
+        Left = 336
         Top = 16
-        Width = 345
+        Width = 305
         Height = 153
         TabOrder = 1
         object Label9: TLabel
           Left = 8
           Top = 8
-          Width = 111
+          Width = 80
           Height = 16
-          Caption = 'ADVERTISEMENT'
+          Caption = 'JENIS IKLAN'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
           Font.Height = -13
@@ -905,9 +907,9 @@ object frAdvertisingTrans: TfrAdvertisingTrans
         object lblcd: TLabel
           Left = 8
           Top = 56
-          Width = 36
+          Width = 35
           Height = 16
-          Caption = 'CODE'
+          Caption = 'KODE'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
           Font.Height = -13
@@ -918,9 +920,9 @@ object frAdvertisingTrans: TfrAdvertisingTrans
         object Label11: TLabel
           Left = 8
           Top = 72
-          Width = 34
+          Width = 37
           Height = 16
-          Caption = 'TYPE'
+          Caption = 'JENIS'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
           Font.Height = -13
@@ -959,9 +961,9 @@ object frAdvertisingTrans: TfrAdvertisingTrans
         object Label27: TLabel
           Left = 8
           Top = 96
-          Width = 66
+          Width = 40
           Height = 32
-          Caption = 'CONTENT'#13#10'SUMMARY'
+          Caption = 'JUDUL'#13#10'IKLAN'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
           Font.Height = -13
@@ -970,11 +972,11 @@ object frAdvertisingTrans: TfrAdvertisingTrans
           ParentFont = False
         end
         object Label10: TLabel
-          Left = 256
+          Left = 208
           Top = 56
-          Width = 39
+          Width = 49
           Height = 12
-          Caption = 'COLOR'
+          Caption = 'Jns warna'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
           Font.Height = -9
@@ -984,7 +986,7 @@ object frAdvertisingTrans: TfrAdvertisingTrans
         end
         object lbl_Color: TLabel
           Tag = 1
-          Left = 304
+          Left = 264
           Top = 56
           Width = 17
           Height = 13
@@ -999,7 +1001,7 @@ object frAdvertisingTrans: TfrAdvertisingTrans
         object tFind_Advt: TEdit
           Left = 8
           Top = 24
-          Width = 329
+          Width = 281
           Height = 24
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
@@ -1018,14 +1020,14 @@ object frAdvertisingTrans: TfrAdvertisingTrans
           Tag = 1
           Left = 80
           Top = 96
-          Width = 257
+          Width = 209
           Height = 49
           TabOrder = 1
         end
       end
       object pnlBG: TPanel
-        Left = 793
-        Top = 30
+        Left = 665
+        Top = 54
         Width = 262
         Height = 375
         BevelOuter = bvNone
@@ -1052,9 +1054,9 @@ object frAdvertisingTrans: TfrAdvertisingTrans
         end
       end
       object lvDetail: TListView
-        Left = 72
+        Left = 8
         Top = 456
-        Width = 993
+        Width = 929
         Height = 106
         Anchors = [akLeft, akTop, akBottom]
         Columns = <
@@ -1063,44 +1065,44 @@ object frAdvertisingTrans: TfrAdvertisingTrans
             Width = 40
           end
           item
-            Caption = 'CODE'
+            Caption = 'KODE'
             Width = 100
           end
           item
             AutoSize = True
-            Caption = 'CONTENT SUMMARY'
+            Caption = 'JUDUL IKLAN'
           end
           item
-            Caption = 'EDITION'
+            Caption = 'EDISI'
           end
           item
-            Caption = 'PAGE'
+            Caption = 'HALAMAN'
             Width = 40
           end
           item
-            Caption = 'FIRST COL'
+            Caption = 'KLM PERTAMA'
           end
           item
-            Caption = 'COL COUNT'
+            Caption = 'JML KLM'
             Width = 70
           end
           item
-            Caption = 'FIRST POS'
+            Caption = 'POS PERTAMA'
           end
           item
-            Caption = 'COL HEIGHT'
+            Caption = 'TINGGI KLM'
             Width = 70
           end
           item
-            Caption = 'SELLING PRICE'
+            Caption = 'HARGA JUAL'
             Width = 150
           end
           item
-            Caption = 'DISC'
+            Caption = 'DISKON'
             Width = 40
           end
           item
-            Caption = 'PRICE TOTAL'
+            Caption = 'TOTAL BAYAR'
             Width = 100
           end>
         Font.Charset = DEFAULT_CHARSET
@@ -1124,7 +1126,7 @@ object frAdvertisingTrans: TfrAdvertisingTrans
           end
           item
             AutoSize = True
-            Caption = 'NAME'
+            Caption = 'NAMA'
           end
           item
             MinWidth = 1
@@ -1147,49 +1149,49 @@ object frAdvertisingTrans: TfrAdvertisingTrans
       end
     end
     object TabDataTransaction: TTabSheet
-      Caption = 'Data Advertising Transaction'
+      Caption = 'Data Transaksi Periklanan'
       ImageIndex = 1
       DesignSize = (
-        1073
+        934
         616)
       object lblinfo: TLabel
-        Left = 856
+        Left = 728
         Top = 592
         Width = 37
         Height = 14
         Caption = 'lblinfo'
       end
       object lvAdvertising: TListView
-        Left = 24
+        Left = 8
         Top = 40
-        Width = 825
+        Width = 713
         Height = 563
         Anchors = [akLeft, akTop, akRight, akBottom]
         Columns = <
           item
-            Caption = 'Advertising Number'
+            Caption = 'No. Advertising'
             Width = 150
           end
           item
-            Caption = 'Date Transaction'
+            Caption = 'Tgl Transaksi'
             Width = 100
           end
           item
-            Caption = 'Advertiser Id'
+            Caption = 'No Id Advertiser'
             Width = 150
           end
           item
-            Caption = 'Advertiser Name'
+            Caption = 'Nama Advertiser'
             Width = 180
           end
           item
-            Caption = 'Organization'
+            Caption = 'Organisasi/ Perusahaan'
           end
           item
-            Caption = 'Position'
+            Caption = 'Jabatan'
           end
           item
-            Caption = 'Payment Total'
+            Caption = 'Total Pembayaran'
             Width = 150
           end>
         ReadOnly = True
@@ -1200,18 +1202,18 @@ object frAdvertisingTrans: TfrAdvertisingTrans
         OnDblClick = lvAdvertisingDblClick
       end
       object tSearch: TEdit
-        Left = 360
+        Left = 336
         Top = 8
-        Width = 235
+        Width = 201
         Height = 22
         Anchors = [akLeft, akTop, akRight]
         TabOrder = 3
         OnChange = tSearchChange
       end
       object cbCategory: TComboBox
-        Left = 600
+        Left = 546
         Top = 8
-        Width = 243
+        Width = 171
         Height = 22
         Style = csDropDownList
         Anchors = [akTop, akRight]
@@ -1219,7 +1221,7 @@ object frAdvertisingTrans: TfrAdvertisingTrans
         TabOrder = 4
       end
       object Panel1: TPanel
-        Left = 856
+        Left = 728
         Top = 208
         Width = 209
         Height = 377
@@ -1234,44 +1236,44 @@ object frAdvertisingTrans: TfrAdvertisingTrans
         object Label29: TLabel
           Left = 8
           Top = 248
-          Width = 81
+          Width = 45
           Height = 14
-          Caption = 'Reg. Number'
+          Caption = 'No.Reg'
         end
         object Label30: TLabel
           Left = 8
           Top = 288
-          Width = 36
+          Width = 74
           Height = 14
-          Caption = 'Name'
+          Caption = 'Nama Sales'
         end
         object Label31: TLabel
           Left = 8
           Top = 336
           Width = 75
           Height = 14
-          Caption = 'Commission'
+          Caption = 'Komisi Iklan'
         end
         object Label32: TLabel
           Left = 8
           Top = 24
-          Width = 123
+          Width = 95
           Height = 14
-          Caption = 'Advertising Number'
+          Caption = 'No. Advertising'
         end
         object Label36: TLabel
           Left = 8
           Top = 104
-          Width = 85
+          Width = 100
           Height = 14
-          Caption = 'Advertisier ID'
+          Caption = 'No id Advertiser'
         end
         object Label37: TLabel
           Left = 8
           Top = 144
-          Width = 36
+          Width = 104
           Height = 14
-          Caption = 'Name'
+          Caption = 'Nama Advertiser'
         end
         object lbl_Adv_No: TLabel
           Left = 8
@@ -1325,16 +1327,16 @@ object frAdvertisingTrans: TfrAdvertisingTrans
         object Label40: TLabel
           Left = 8
           Top = 184
-          Width = 58
+          Width = 71
           Height = 14
-          Caption = 'Pay Total'
+          Caption = 'Total Bayar'
         end
         object Label38: TLabel
           Left = 8
           Top = 64
-          Width = 104
+          Width = 82
           Height = 14
-          Caption = 'Advertising Date'
+          Caption = 'Tgl Transaksi'
         end
         object lbl_date_trans: TLabel
           Left = 8
@@ -1345,38 +1347,38 @@ object frAdvertisingTrans: TfrAdvertisingTrans
         end
       end
       object Panel2: TPanel
-        Left = 856
+        Left = 728
         Top = 8
         Width = 209
         Height = 193
         TabOrder = 5
         object Label33: TLabel
-          Left = 32
-          Top = 72
-          Width = 81
+          Left = 40
+          Top = 80
+          Width = 67
           Height = 14
-          Caption = 'Input Edition'
+          Caption = 'Input Edisi'
         end
         object Label34: TLabel
-          Left = 32
+          Left = 0
           Top = 136
-          Width = 60
+          Width = 84
           Height = 14
-          Caption = 'First date'
+          Caption = 'Tanggal Awal'
         end
         object Label35: TLabel
-          Left = 32
+          Left = 0
           Top = 160
-          Width = 60
+          Width = 85
           Height = 14
-          Caption = 'Last date'
+          Caption = 'Tanggal Akhir'
         end
         object rb_Filter_by_D: TRadioButton
-          Left = 8
+          Left = 0
           Top = 104
-          Width = 153
+          Width = 201
           Height = 25
-          Caption = 'Enable Filter by  Date'
+          Caption = 'Filter Berdasarkan Tanggal'
           TabOrder = 3
           OnClick = rb_Filter_by_DClick
         end
@@ -1385,13 +1387,13 @@ object frAdvertisingTrans: TfrAdvertisingTrans
           Top = 40
           Width = 153
           Height = 17
-          Caption = 'Enable Filter by Edition'
+          Caption = 'Filter Berdasarkan Edisi'
           TabOrder = 1
           OnClick = Rb_Filter_by_EClick
         end
         object tFilter_Edition: TEdit
           Left = 120
-          Top = 64
+          Top = 72
           Width = 49
           Height = 22
           TabOrder = 2
@@ -1422,7 +1424,7 @@ object frAdvertisingTrans: TfrAdvertisingTrans
           Top = 16
           Width = 113
           Height = 17
-          Caption = 'Disable Filter'
+          Caption = 'Tanpa Filter'
           Checked = True
           TabOrder = 0
           TabStop = True
@@ -1430,16 +1432,16 @@ object frAdvertisingTrans: TfrAdvertisingTrans
         end
       end
       object bMoreDetail: TBitBtn
-        Left = 24
+        Left = 8
         Top = 8
         Width = 81
         Height = 21
-        Caption = 'More Detail'
+        Caption = 'Rincian'
         TabOrder = 0
         OnClick = bMoreDetailClick
       end
       object bDelete: TBitBtn
-        Left = 112
+        Left = 96
         Top = 8
         Width = 57
         Height = 21
@@ -1448,29 +1450,29 @@ object frAdvertisingTrans: TfrAdvertisingTrans
         OnClick = bDeleteClick
       end
       object bPayment: TBitBtn
-        Left = 176
+        Left = 160
         Top = 8
         Width = 161
         Height = 21
-        Caption = 'Print Avidence Payment'
+        Caption = 'Cetak Bukti Pembayaran'
         TabOrder = 2
         OnClick = bPaymentClick
       end
     end
     object TabCommission: TTabSheet
-      Caption = 'Sales Commission'
+      Caption = 'Komisi Iklan'
       ImageIndex = 2
       DesignSize = (
-        1073
+        934
         616)
       object Panel3: TPanel
         Left = 8
         Top = 56
-        Width = 705
+        Width = 665
         Height = 561
         TabOrder = 6
         object lblinfo2: TLabel
-          Left = 8
+          Left = 16
           Top = 539
           Width = 37
           Height = 14
@@ -1479,30 +1481,30 @@ object frAdvertisingTrans: TfrAdvertisingTrans
         object lvCommission: TListView
           Left = 9
           Top = 72
-          Width = 688
+          Width = 640
           Height = 457
           Align = alCustom
           Columns = <
             item
-              Caption = 'Invoice Number'
+              Caption = 'No Bukti'
               Width = 100
             end
             item
-              Caption = 'Invoice Date'
+              Caption = 'Tanggal Pengambilan'
               Width = 100
             end
             item
-              Caption = 'Reg. Number'
+              Caption = 'No. Reg'
               Width = 120
             end
             item
-              Caption = 'Sales Name'
+              Caption = 'Nama Sales'
               Width = 160
             end
             item
               Alignment = taRightJustify
               AutoSize = True
-              Caption = 'Comission Total'
+              Caption = 'Total Komisi'
             end
             item
               Caption = 'Status'
@@ -1517,16 +1519,16 @@ object frAdvertisingTrans: TfrAdvertisingTrans
         object grMakingCommission: TGroupBox
           Left = 16
           Top = 8
-          Width = 393
+          Width = 345
           Height = 57
-          Caption = 'Making Sales Commission'
+          Caption = 'Buat Komisi Iklan'
           TabOrder = 0
           object Label39: TLabel
             Left = 8
-            Top = 22
-            Width = 110
-            Height = 18
-            Caption = 'Invoice Date '
+            Top = 14
+            Width = 65
+            Height = 36
+            Caption = 'Tanggal'#13#10'Bukti'
             Font.Charset = DEFAULT_CHARSET
             Font.Color = clWindowText
             Font.Height = -16
@@ -1550,17 +1552,17 @@ object frAdvertisingTrans: TfrAdvertisingTrans
             TabOrder = 1
           end
           object bCreate: TBitBtn
-            Left = 304
+            Left = 264
             Top = 16
             Width = 73
             Height = 33
-            Caption = 'Create'
+            Caption = 'Buat'
             TabOrder = 0
             OnClick = bCreateClick
           end
         end
         object rgStatus: TRadioGroup
-          Left = 416
+          Left = 368
           Top = 8
           Width = 169
           Height = 57
@@ -1573,109 +1575,109 @@ object frAdvertisingTrans: TfrAdvertisingTrans
           Font.Style = []
           ItemIndex = 0
           Items.Strings = (
-            'All'
-            'Already'
-            'Not Yet')
+            'Semua'
+            'Diambil'
+            'Blm diambil')
           ParentFont = False
           TabOrder = 1
           OnClick = rgStatusClick
         end
         object BitBtn1: TBitBtn
-          Left = 592
+          Left = 544
           Top = 14
           Width = 105
           Height = 49
-          Caption = 'Chage '#13#10'Status'
+          Caption = 'Ganti'#13#10'Status'
           TabOrder = 2
           OnClick = BitBtn1Click
         end
       end
       object Panel4: TPanel
-        Left = 720
+        Left = 680
         Top = 176
-        Width = 337
+        Width = 249
         Height = 257
         TabOrder = 7
         object Label41: TLabel
-          Left = 8
-          Top = 56
-          Width = 98
+          Left = 16
+          Top = 32
+          Width = 52
           Height = 14
-          Caption = 'Invoice Number'
+          Caption = 'No Bukti'
         end
         object Label45: TLabel
-          Left = 8
-          Top = 88
-          Width = 79
+          Left = 16
+          Top = 64
+          Width = 50
           Height = 14
-          Caption = 'Invoice Date'
+          Caption = 'Tanggal'
         end
         object Label47: TLabel
-          Left = 8
-          Top = 120
-          Width = 81
+          Left = 16
+          Top = 112
+          Width = 45
           Height = 14
-          Caption = 'Reg. Number'
+          Caption = 'No.Reg'
         end
         object Label49: TLabel
-          Left = 8
-          Top = 152
-          Width = 74
+          Left = 16
+          Top = 144
+          Width = 36
           Height = 14
-          Caption = 'Sales Name'
+          Caption = 'Nama'
         end
         object Label44: TLabel
-          Left = 8
-          Top = 200
-          Width = 124
-          Height = 28
-          Caption = 'Taking Commission '#13#10'Status'
+          Left = 16
+          Top = 232
+          Width = 41
+          Height = 14
+          Caption = 'Status'
         end
         object Label46: TLabel
-          Left = 8
+          Left = 16
           Top = 176
-          Width = 106
+          Width = 75
           Height = 14
-          Caption = 'CommissionTotal'
+          Caption = 'Total Komisi'
         end
         object lbl_Invoice_no: TLabel
-          Left = 128
-          Top = 56
+          Left = 16
+          Top = 48
           Width = 91
           Height = 14
           Caption = 'lbl_Invoice_no'
         end
         object lbl_invoice_date: TLabel
-          Left = 128
-          Top = 88
+          Left = 16
+          Top = 80
           Width = 102
           Height = 14
           Caption = 'lbl_invoice_date'
         end
         object lbl_sales_name: TLabel
-          Left = 128
-          Top = 152
+          Left = 16
+          Top = 160
           Width = 98
           Height = 14
           Caption = 'lbl_sales_name'
         end
         object lbl_sales_regno: TLabel
-          Left = 128
-          Top = 120
+          Left = 16
+          Top = 128
           Width = 100
           Height = 14
           Caption = 'lbl_sales_regno'
         end
         object lbl_Commission_total: TLabel
-          Left = 128
-          Top = 176
+          Left = 16
+          Top = 192
           Width = 134
           Height = 14
           Caption = 'lbl_Commission_total'
         end
         object lbl_Status: TLabel
-          Left = 136
-          Top = 200
+          Left = 128
+          Top = 224
           Width = 111
           Height = 23
           Caption = 'lbl_Status'
@@ -1687,11 +1689,12 @@ object frAdvertisingTrans: TfrAdvertisingTrans
           ParentFont = False
         end
         object Label48: TLabel
-          Left = 8
-          Top = 24
-          Width = 267
+          Left = 16
+          Top = 8
+          Width = 63
           Height = 18
-          Caption = 'DETAIL TAKING COMMISSION'
+          Alignment = taCenter
+          Caption = 'Rincian'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
           Font.Height = -16
@@ -1701,10 +1704,10 @@ object frAdvertisingTrans: TfrAdvertisingTrans
         end
       end
       object lvCommission_detail: TListView
-        Left = 720
+        Left = 680
         Top = 440
-        Width = 337
-        Height = 169
+        Width = 249
+        Height = 177
         Align = alCustom
         Columns = <
           item
@@ -1718,7 +1721,7 @@ object frAdvertisingTrans: TfrAdvertisingTrans
           item
             Alignment = taRightJustify
             AutoSize = True
-            Caption = 'Pay Total'
+            Caption = 'Total Bayar'
           end
           item
             Caption = '%'
@@ -1737,14 +1740,14 @@ object frAdvertisingTrans: TfrAdvertisingTrans
       object tSearch2: TEdit
         Left = 232
         Top = 24
-        Width = 273
+        Width = 233
         Height = 22
         Anchors = [akLeft, akTop, akRight]
         TabOrder = 3
         OnChange = tSearch2Change
       end
       object cbCategory2: TComboBox
-        Left = 512
+        Left = 472
         Top = 24
         Width = 201
         Height = 26
@@ -1759,36 +1762,36 @@ object frAdvertisingTrans: TfrAdvertisingTrans
         TabOrder = 4
       end
       object Panel5: TPanel
-        Left = 720
+        Left = 680
         Top = 24
-        Width = 337
+        Width = 249
         Height = 145
         TabOrder = 5
         object Label42: TLabel
-          Left = 56
+          Left = 16
           Top = 80
-          Width = 60
+          Width = 84
           Height = 14
-          Caption = 'First date'
+          Caption = 'Tanggal Awal'
         end
         object Label43: TLabel
-          Left = 56
+          Left = 16
           Top = 104
-          Width = 60
+          Width = 85
           Height = 14
-          Caption = 'Last date'
+          Caption = 'Tanggal Akhir'
         end
         object rb_filterDate: TRadioButton
           Left = 8
           Top = 40
-          Width = 153
+          Width = 209
           Height = 25
-          Caption = 'Enable Filter by  Date'
+          Caption = 'Filter Berdasarkan Tanggal'
           TabOrder = 1
           OnClick = rb_filterDateClick
         end
         object dtFilter3: TDateTimePicker
-          Left = 160
+          Left = 120
           Top = 72
           Width = 113
           Height = 22
@@ -1798,7 +1801,7 @@ object frAdvertisingTrans: TfrAdvertisingTrans
           OnChange = dtFilter3Change
         end
         object dtFilter4: TDateTimePicker
-          Left = 160
+          Left = 120
           Top = 104
           Width = 113
           Height = 22
@@ -1812,17 +1815,17 @@ object frAdvertisingTrans: TfrAdvertisingTrans
           Top = 16
           Width = 113
           Height = 17
-          Caption = 'Disable Filter'
+          Caption = 'Tanpa Filter'
           TabOrder = 0
           OnClick = rb_disfilterClick
         end
       end
       object bPrintInvoice: TBitBtn
-        Left = 24
+        Left = 8
         Top = 24
-        Width = 57
+        Width = 65
         Height = 25
-        Caption = 'Print'#13#10'Invoice'
+        Caption = 'Cetak Nota'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -8
@@ -1833,7 +1836,7 @@ object frAdvertisingTrans: TfrAdvertisingTrans
         OnClick = bPrintInvoiceClick
       end
       object bDeleteInvoice: TBitBtn
-        Left = 96
+        Left = 80
         Top = 24
         Width = 57
         Height = 25
@@ -1848,11 +1851,11 @@ object frAdvertisingTrans: TfrAdvertisingTrans
         OnClick = bDeleteInvoiceClick
       end
       object bRemoveFromList: TBitBtn
-        Left = 160
+        Left = 144
         Top = 24
-        Width = 65
+        Width = 73
         Height = 25
-        Caption = 'Remove'#13#10'From List'
+        Caption = 'Batal'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -8
@@ -1867,13 +1870,13 @@ object frAdvertisingTrans: TfrAdvertisingTrans
   object Qcomm: TADOQuery
     Connection = dm.AdoConn
     Parameters = <>
-    Left = 4
-    Top = 128
+    Left = 12
+    Top = 264
   end
   object QDetailComm: TADOQuery
     Connection = dm.AdoConn
     Parameters = <>
-    Left = 4
-    Top = 160
+    Left = 12
+    Top = 224
   end
 end

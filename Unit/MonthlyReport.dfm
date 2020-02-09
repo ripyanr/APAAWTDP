@@ -2,7 +2,7 @@ object frMonthReport: TfrMonthReport
   Left = 633
   Top = 158
   BorderStyle = bsDialog
-  Caption = 'Monthly Report'
+  Caption = 'Laporan Bulanan'
   ClientHeight = 265
   ClientWidth = 315
   Color = clBtnFace
@@ -12,6 +12,7 @@ object frMonthReport: TfrMonthReport
   Font.Name = 'Verdana'
   Font.Style = []
   OldCreateOrder = False
+  Position = poMainFormCenter
   OnClose = FormClose
   PixelsPerInch = 96
   TextHeight = 13
@@ -24,23 +25,23 @@ object frMonthReport: TfrMonthReport
     object Label42: TLabel
       Left = 56
       Top = 80
-      Width = 53
+      Width = 48
       Height = 13
-      Caption = 'First date'
+      Caption = 'Tgl Awal'
     end
     object Label43: TLabel
       Left = 56
       Top = 104
-      Width = 52
+      Width = 51
       Height = 13
-      Caption = 'Last date'
+      Caption = 'Tgl Akhir'
     end
     object rb_filterDate: TRadioButton
       Left = 8
       Top = 40
       Width = 153
       Height = 25
-      Caption = 'Period'
+      Caption = 'Periode'
       TabOrder = 1
       OnClick = rb_filterDateClick
     end
@@ -67,7 +68,7 @@ object frMonthReport: TfrMonthReport
       Top = 16
       Width = 97
       Height = 17
-      Caption = 'All'
+      Caption = 'Semua'
       Checked = True
       TabOrder = 0
       TabStop = True
@@ -79,7 +80,7 @@ object frMonthReport: TfrMonthReport
     Top = 8
     Width = 297
     Height = 57
-    Caption = 'Report'
+    Caption = 'Laporan'
     Font.Charset = ANSI_CHARSET
     Font.Color = clWindowText
     Font.Height = -9
@@ -87,8 +88,8 @@ object frMonthReport: TfrMonthReport
     Font.Style = []
     ItemIndex = 0
     Items.Strings = (
-      'Advertising Transaction'
-      'Taiking Commission')
+      'Transaksi Periklanan'
+      'Komisi Iklan')
     ParentFont = False
     TabOrder = 0
   end

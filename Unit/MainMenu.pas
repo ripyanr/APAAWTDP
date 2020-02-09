@@ -3,21 +3,17 @@ unit MainMenu;
 interface
 
 uses
-  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Windows, Messages, SysUtils, Variants, Classes, Controls, Forms,
   Dialogs, Menus, ComCtrls, sSkinManager, StdCtrls, Buttons,
-  ExtCtrls, DB, ADODB,iniFiles, frxClass, frxDBSet;
+  ExtCtrls, DB, ADODB,iniFiles, frxDBSet, frxClass, Graphics;
 const
   InputBoxMessage = WM_USER + 200;
 type
   TfrMainMenu = class(TForm)
     MainMenu1: TMainMenu;
     sbInfo: TStatusBar;
-    sSkinManager1: TsSkinManager;
     wallpaper: TImage;
     pnl_Menu: TPanel;
-    Label3: TLabel;
-    lblap: TLabel;
-    Label5: TLabel;
     gp_Setting: TGroupBox;
     B_mTool: TBitBtn;
     grReport: TGroupBox;
@@ -33,8 +29,6 @@ type
     B_mSales: TBitBtn;
     B_mAdvertiser: TBitBtn;
     B_mAdvertisement: TBitBtn;
-    Label1: TLabel;
-    Label2: TLabel;
     pnl_Login: TPanel;
     b_Login: TBitBtn;
     B_Exit: TBitBtn;
@@ -88,9 +82,9 @@ type
     frxLogin: TfrxDBDataset;
     ds1: TDataSource;
     lblinfo2: TLabel;
-    lbl1: TLabel;
-    img1: TImage;
     lbl2: TLabel;
+    sSkinManager1: TsSkinManager;
+    N3: TMenuItem;
     procedure tSearchChange(Sender: TObject);
     procedure bDeleteClick(Sender: TObject);
     procedure bEditClick(Sender: TObject);
@@ -172,6 +166,9 @@ uses  DatabaseOption, User,InputMaster, ProcedureFunction, DataModule, Advertisi
 
 {$R *.dfm}
 // start of my procedure------------------------------------------------
+
+
+
 procedure TfrMainMenu.selectSkin;
 begin
   Create_InIFile:=TIniFile.Create(ChangeFileExt(Application.ExeName,'.ini'));
@@ -319,28 +316,28 @@ begin
 
       if PageControl1.TabIndex=0 then
       begin
-        Items.Add('Registration Number');
-        Items.Add('Sales Name');
-        Items.Add('Sales Contact');
-        Items.Add('Sales Email');
-        Items.Add('Sales Address');
+        Items.Add('No. Register');
+        Items.Add('Nama Sales');
+        Items.Add('No.Kontak');
+        Items.Add('Email Sales');
+        Items.Add('Alamat Sales');
       end
       else if PageControl1.TabIndex=1 then
       begin
-        Items.Add('Advertiser No Identity');
-        Items.Add('Advertiser Name');
-        Items.Add('Organization');
-        Items.Add('Position');
-        Items.Add('Advertiser Contact');
-        Items.Add('Advertiser Email');
-        Items.Add('Advertiser Address');
+        Items.Add('No Identitas Advertiser');
+        Items.Add('Nama Advertiser');
+        Items.Add('Organisasi / Perusahaan');
+        Items.Add('Jabatan');
+        Items.Add('No. Kontak Advertiser');
+        Items.Add('Email Advertiser');
+        Items.Add('Alamat Advertiser');
       end
       else if PageControl1.TabIndex=2 then
       begin
-        Items.Add('Advertisement Code');
-        Items.Add('Advertisement Type');
-        Items.Add('Color Type (BW=Black White or FC=Full Color)');
-        Items.Add('Base Price');
+        Items.Add('Koe Iklan');
+        Items.Add('Jenis Iklan');
+        Items.Add('Jenis Warna (BW=Black White atau FC=Full Color)');
+        Items.Add('Harga Dasar');
       end;
 
     ItemIndex:=0;
@@ -455,10 +452,10 @@ end;
 
 Procedure TfrMainMenu.first_condition;
 begin
-  pnl_Menu.Enabled:=False;
+  pnl_Menu.Visible:=False;
   pnl_Login.Visible:=True;
   Pnl_Master.Visible:=False;
-  Label2.Visible:=False;
+
   GpUser.Visible:=False;
   sbInfo.Visible:=False;
   wallpaper.Visible:=True;
@@ -473,9 +470,9 @@ end;
 
 Procedure TfrMainMenu.second_condition;
 begin
-  pnl_Menu.Enabled:=True;
+  pnl_Menu.Visible:=True;
   pnl_Login.Visible:=False;
-  Label2.Visible:=True;
+
   GpUser.Visible:=True;
   sbInfo.Visible:=True;
 
@@ -552,7 +549,7 @@ begin
 
 if sbInfo.Panels[5].Text='GUEST' then
 begin
-  MessageDlg('Guest don`t have access for delete !',mtWarning,[mbOK],0);
+  MessageDlg('Level Guest tidak bisa melakukan Penghapusan data !',mtWarning,[mbOK],0);
   Exit
 end;
 
@@ -574,7 +571,7 @@ end;
    SelectQuery(data);
   if not dm.Qview.Eof then
   begin
-    MessageDlg('Cannot delete '+ listAktif.Selected.Caption +' because used in other process !',mtWarning,[mbOK],0);
+    MessageDlg('Tidak bisa mengahapus '+ listAktif.Selected.Caption +' karena digunakan dalam proses lain !',mtWarning,[mbOK],0);
     Exit;
   end;
 
@@ -588,7 +585,7 @@ end;
     1:data:='DELETE FROM Advertiser WHERE advertiser_id="'+lvAdvertiser.Selected.Caption+'"';
     2:data:='DELETE FROM advertisement WHERE adv_code="'+lvAdvertisment.Selected.Caption+'"';
   end;
-  if MessageDlg('You sure delete '+ listAktif.Selected.Caption +' ?',mtWarning,[mbYes,mbNo],0)=mrYes then
+  if MessageDlg('Yakin hapus '+ listAktif.Selected.Caption +' ?',mtWarning,[mbYes,mbNo],0)=mrYes then
   begin
     ExcuteQuery(data);
     tSearchChange(Self);
@@ -601,7 +598,7 @@ procedure TfrMainMenu.bEditClick(Sender: TObject);
 begin
   if sbInfo.Panels[5].Text='GUEST' then
 begin
-  MessageDlg('Guest don`t have access for edit !',mtWarning,[mbOK],0);
+  MessageDlg('level Guest tidak bisa melakukan edit data !',mtWarning,[mbOK],0);
   Exit
 end;
 
@@ -617,7 +614,7 @@ begin
 
   if sbInfo.Panels[5].Text='GUEST' then
   begin
-    MessageDlg('Guest don`t have access for Add !',mtWarning,[mbOK],0);
+    MessageDlg('Level Guest tidak bisa melakukan penambahan data  !',mtWarning,[mbOK],0);
     Exit
   end;
 
@@ -633,10 +630,11 @@ end;
 
 procedure TfrMainMenu.FormCreate(Sender: TObject);
 begin
+
 try
   frDatabaseOption.SettingConnection;
 except
-  ShowMessage('Connection filed ,Check database setting !');
+  ShowMessage('Gagal Koneksi ke database, Cek kembali setting Database !');
 
 end; //try
   first_condition;
@@ -650,15 +648,15 @@ end; //try
   skn4:=false;
   skn4:=false;
 
-  sSkinManager1.SkinDirectory:=ExtractFilePath(Application.ExeName)+'/skins';
-  sSkinManager1.Active:=True;
+
   //ini file
   Create_InIFile:=TIniFile.Create(ChangeFileExt(Application.ExeName,'.ini'));
 
   try
     sSkinManager1.Active:=Create_InIFile.ReadBool('Skin','aktif',skn1);
     sSkinManager1.SkinName:=Create_InIFile.ReadString('Skin','SkinName',skn);
-
+      sSkinManager1.SkinDirectory:=ExtractFilePath(Application.ExeName)+'/skins';
+  sSkinManager1.Active:=True;
 
     //skin
     Skin11.Checked:=Create_InIFile.ReadBool('Skin','option1',skn1);
@@ -670,7 +668,11 @@ end; //try
 
     finally
       Create_InIFile.Free;
+  
   end;//try
+
+
+
 end;
 
 
@@ -728,6 +730,7 @@ end;
 procedure TfrMainMenu.B_mSalesClick(Sender: TObject);
 begin
    Pnl_Master.Visible:=True;
+   pnl_Menu.Visible:=False;
    PageControl1.TabIndex:=0;
    PageControl1Change(Self);
    wallpaper.Visible:=False;
@@ -736,6 +739,7 @@ end;
 procedure TfrMainMenu.B_mAdvertiserClick(Sender: TObject);
 begin
     Pnl_Master.Visible:=True;
+    pnl_Menu.Visible:=False;
     PageControl1.TabIndex:=1;
     PageControl1Change(Self);
     wallpaper.Visible:=False;
@@ -744,6 +748,7 @@ end;
 procedure TfrMainMenu.B_mAdvertisementClick(Sender: TObject);
 begin
     Pnl_Master.Visible:=True;
+    pnl_Menu.Visible:=False;
     PageControl1.TabIndex:=2;
     PageControl1Change(Self);
     wallpaper.Visible:=False;
@@ -751,9 +756,9 @@ end;
 
 procedure TfrMainMenu.B_mAdvertisingClick(Sender: TObject);
 begin
- Application.CreateForm(TfrAdvertisingTrans,frAdvertisingTrans);
- frAdvertisingTrans.PageControl1.TabIndex:=0;
- frAdvertisingTrans.ShowModal;
+   Application.CreateForm(TfrAdvertisingTrans,frAdvertisingTrans);
+   frAdvertisingTrans.PageControl1.TabIndex:=0;
+   frAdvertisingTrans.ShowModal;
 end;
 
 procedure TfrMainMenu.b_LoginClick(Sender: TObject);
@@ -781,7 +786,7 @@ begin
   Qlogin.Open;
   if Qlogin.Eof then
     begin
-      MessageDlg('Sorry Combination UserID with Password is wrong',mtWarning,[mbOK],0);
+      MessageDlg('Maaf kombinasi user dan password tidak cook dengan database ',mtWarning,[mbOK],0);
       tUserID.Clear;
       tPassword.Clear;
       tUserID.SetFocus;
@@ -811,13 +816,18 @@ end;
 
 procedure TfrMainMenu.bBackClick(Sender: TObject);
 begin
-Pnl_Master.Visible:=False;
-wallpaper.Visible:=true;
+  Pnl_Master.Visible:=False;
+  wallpaper.Visible:=true;
+  pnl_Menu.Visible:=True;
 end;
 
 procedure TfrMainMenu.B_ExitClick(Sender: TObject);
 begin
   selectSkin;
+  While Top< (Screen.Height) Do
+    Begin
+      Top:=Top+30;
+    End;
   Application.Terminate;
 end;
 
@@ -852,7 +862,11 @@ end;
 
 procedure TfrMainMenu.Exit1Click(Sender: TObject);
 begin
-   Application.Terminate;
+  While Top< (Screen.Height) Do
+    Begin
+      Top:=Top+30;
+    End;
+  Application.Terminate;
 end;
 
 procedure TfrMainMenu.SettingConnection1Click(Sender: TObject);
@@ -965,23 +979,24 @@ procedure TfrMainMenu.B_mPassClick(Sender: TObject);
 var sOldPass, sNewPass:string;
 begin
   PostMessage(Handle, InputBoxMessage, 0, 0);
-  sOldPass := InputBox('Change Password', 'Please Enter a Old Password', '');
+  sOldPass := InputBox('Ganti Password', 'Masukan Password lama', '');
   SelectQuery('Select pass from officer where userID="'+sbInfo.Panels[1].Text + '" And Pass="'+sOldPass+'"');
   if dm.Qview.RecordCount=1 then
   begin
     PostMessage(Handle, InputBoxMessage, 0, 0);
-    sNewPass := InputBox('Change Password', 'Please Enter a New Password', '');
+    sNewPass := InputBox('Ganti Password', 'Masukan Password baru', '');
 
+    if sOldPass<>'' then exit;
     if Length(sNewPass)>30 then
-      ShowMessage('Then Passsword character too long !!!')
+      ShowMessage('Karater yang anda masukan terlalu panjang')
     else
       begin
       excuteQuery('Update officer set pass='+QuotedStr(sNewPass)+' where userID="'+sbInfo.Panels[1].Text+'"');
-      ShowMessage('Password changed !');
+      ShowMessage('Password berhasil di ganti !');
       end;
    end
    else
-    ShowMessage('Old Password is Wrong !')
+    if sOldPass<>'' then ShowMessage('Password lama anda salah !');
 
 
 end;

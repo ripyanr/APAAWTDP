@@ -183,7 +183,7 @@ begin
     x1:=StrToInt(tFirst_Column_Edit.text);
     if (x1+StrToInt(sColCount)-1)>5 then
     begin
-      MessageDlg('First column too big !',mtWarning,[mbOK],0);
+      MessageDlg('Kolom Pertama terlalu besar !',mtWarning,[mbOK],0);
       tFirst_Column_Edit.text:=IntToStr(5-StrToInt( sColCount)+1);
       x1:=StrToInt(tFirst_Column_Edit.text);
       sColCount:=IntToStr(StrToInt( sColCount));
@@ -197,13 +197,13 @@ begin
     jml_x:=StrToInt(sColCount);
     if jml_x < StrToInt( sColCount) then
     begin
-      MessageDlg('Column count too small !',mtWarning,[mbOK],0);
+      MessageDlg('Jml Kolom terlalu sedikit!',mtWarning,[mbOK],0);
       sColCount:=IntToStr(StrToInt( sColCount));
       jml_x:=StrToInt(sColCount);
     end
     else if (x1+jml_x-1) > 5 then
     begin
-      MessageDlg('Column count too big !',mtWarning,[mbOK],0);
+      MessageDlg('Jumlah kolom terlalu besar !',mtWarning,[mbOK],0);
       sColCount:=IntToStr(jml_x-((x1+jml_x-1)-5));
       jml_x:=StrToInt(sColCount);
     end;
@@ -222,7 +222,7 @@ begin
     y1:=StrToInt(tFirst_Pos_Edit.Text);
     if (y1+StrToInt( sColHeight)) > pnlBG.Height then
     begin
-      MessageDlg('First Position too big !',mtWarning,[mbOK],0);
+      MessageDlg('Posisi pertama terlalu besar !',mtWarning,[mbOK],0);
       y1:=y1-((y1+StrToInt( sColHeight))-pnlBG.Height);
       tFirst_Pos_Edit.Text:=IntToStr(y1);
     end;
@@ -237,7 +237,7 @@ begin
     jml_y:=StrToInt(sColHeight);
     if (y1+jml_y) > pnlBG.Height then
     begin
-      MessageDlg('Column height too big',mtWarning,[mbOK],0);
+      MessageDlg('Kolom terlalu tinggi',mtWarning,[mbOK],0);
       jml_y:=jml_y-((y1+jml_y)-pnlBG.Height);
       sColHeight:=IntToStr(jml_y);
     end;
@@ -531,7 +531,7 @@ begin
 
     if shpAdvt_new.Brush.Color=clBlack then
     begin
-      MessageDlg('please Check Advertising Position, can replace other advertising!',mtWarning,[mbOK],0);
+      MessageDlg('Ruang iklan tersebut sudah dipesan oleh orang lain!',mtWarning,[mbOK],0);
       tFirst_Column_Edit.SetFocus;
       exit
     end;
